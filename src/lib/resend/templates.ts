@@ -42,7 +42,7 @@ ${data.addons.length > 0 ? `<div class="row"><span class="label">✨ Dodaci</spa
 <div class="price-row price-total"><span>✅ Depozit plaćen</span><span>${formatPrice(data.deposit_rsd)}</span></div>
 <div class="price-row" style="color:#8A7E72"><span>Na mestu</span><span>${formatPrice(data.remaining_rsd)}</span></div>
 </div>
-<p style="font-size:13px;color:#8A7E72">📍 Vrdnik, Fruška Gora<br>📞 +381 XX XXX XXXX</p>
+<p style="font-size:13px;color:#8A7E72">📍 Vrdnik, Fruška Gora<br>📞 065 387 7777</p>
 </div>
 <div class="footer">Napolitana Lab Vrdnik · Fruška Gora<br>U saradnji sa picerijom Majstor i Margarita</div>
 </div></body></html>`,
