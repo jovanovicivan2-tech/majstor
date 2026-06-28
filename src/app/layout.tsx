@@ -34,8 +34,9 @@ const venueSchema = {
   "@context": "https://schema.org", "@type": "EventVenue",
   name: "Napolitana Lab Vrdnik", url: APP_URL, telephone: "+381653877777",
   description: "Radionica napolitanske pice i privatni prostor sa bazenom na Fruškoj Gori.",
-  address: { "@type": "PostalAddress", addressLocality: "Vrdnik", addressRegion: "Vojvodina", postalCode: "22406", addressCountry: "RS" },
-  geo: { "@type": "GeoCoordinates", latitude: "45.1234", longitude: "19.7890" },
+  address: { "@type": "PostalAddress", streetAddress: "Grobljanska", addressLocality: "Vrdnik", addressRegion: "Vojvodina", postalCode: "22406", addressCountry: "RS" },
+  geo: { "@type": "GeoCoordinates", latitude: "45.1181288", longitude: "19.8128489" },
+  hasMap: "https://maps.app.goo.gl/RD2bw5dQoNc4FyuVA",
   amenityFeature: [
     { "@type": "LocationFeatureSpecification", name: "Radionica pice", value: true },
     { "@type": "LocationFeatureSpecification", name: "Privatni bazen", value: true },

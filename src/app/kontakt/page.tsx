@@ -44,12 +44,12 @@ export default function KontaktPage() {
                 <div><p style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72', marginBottom: 2 }}>Email</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>jovanovicivan2@gmail.com</p></div>
               </a>
 
-              <div className="flex items-center gap-4" style={{ padding: 18, background: '#fff', borderRadius: 8, boxShadow: 'var(--shadow-soft)' }}>
+              <a href="https://maps.app.goo.gl/RD2bw5dQoNc4FyuVA" target="_blank" rel="noopener noreferrer" className="card-hover flex items-center gap-4" style={{ padding: 18, background: '#fff', borderRadius: 8, boxShadow: 'var(--shadow-soft)', textDecoration: 'none' }}>
                 <span className="inline-flex items-center justify-center shrink-0" style={{ width: 46, height: 46, borderRadius: 8, background: 'rgba(92,26,46,0.08)' }}>
                   <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5C1A2E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 21c-4.5-4-7-7-7-10a7 7 0 0 1 14 0c0 3-2.5 6-7 10ZM12 8a3 3 0 0 0 0 6 3 3 0 0 0 0-6Z" /></svg>
                 </span>
-                <div><p style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72', marginBottom: 2 }}>Lokacija</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>Vrdnik, Fruška Gora</p></div>
-              </div>
+                <div><p style={{ fontSize: 11, textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72', marginBottom: 2 }}>Lokacija</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>Vrdnik, Fruška Gora · prilaz preko Grobljanske</p></div>
+              </a>
             </div>
           </div>
 

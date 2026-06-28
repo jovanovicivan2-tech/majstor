@@ -35,30 +35,37 @@ export default function LocationSection() {
             ))}
           </div>
 
+          <div className="mt-6 flex items-start gap-3" style={{ padding: 16, background: 'rgba(92,26,46,0.06)', borderRadius: 8, border: '1px solid rgba(92,26,46,0.12)' }}>
+            <span style={{ color: '#5C1A2E', marginTop: 1 }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6" /></svg>
+            </span>
+            <p style={{ fontSize: 14, color: '#5C1A2E', lineHeight: 1.5 }}>
+              <strong>Prilaz imanju je preko Grobljanske ulice.</strong> Sledite navigaciju do tačke na mapi.
+            </p>
+          </div>
+
           <Link
-            href="https://maps.google.com/?q=Vrdnik+Fruška+Gora"
+            href="https://maps.app.goo.gl/RD2bw5dQoNc4FyuVA"
             target="_blank"
             rel="noopener noreferrer"
-            className="link-underline inline-flex items-center gap-2 mt-8"
+            className="link-underline inline-flex items-center gap-2 mt-6"
             style={{ color: '#5C1A2E', fontSize: 14, fontWeight: 600 }}
           >
-            Otvori na mapi →
+            Otvori na Google mapama →
           </Link>
         </div>
 
-        {/* Slika imanja */}
+        {/* Interaktivna mapa */}
         <div className="relative overflow-hidden rounded-lg shadow-lift" style={{ aspectRatio: '4/5' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/garden_view.jpg"
-            alt="Uređena bašta sa panoramom Fruškogorske ravnice — Vrdnik"
-            className="absolute inset-0 w-full h-full object-cover"
+          <iframe
+            title="Lokacija — Vrdnik, Fruška Gora"
+            src="https://www.google.com/maps?q=45.1181288,19.8128489&z=14&output=embed"
+            className="absolute inset-0 w-full h-full"
+            style={{ border: 0 }}
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(28,28,30,0.4), transparent 55%)' }} />
-          <div className="absolute bottom-5 left-5 right-5">
-            <p className="font-display" style={{ color: '#fff', fontSize: 20, fontStyle: 'italic' }}>Imanje na Fruškoj Gori</p>
-          </div>
         </div>
       </div>
     </section>
