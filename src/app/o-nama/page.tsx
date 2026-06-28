@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/layout/PageHero';
+import AtmosphereQuote from '@/components/ui/AtmosphereQuote';
 import CertificateGallery from '@/components/home/CertificateGallery';
 
 export const metadata: Metadata = {
@@ -34,8 +35,12 @@ export default function ONamaPage() {
               Ideja je jednostavna — spojiti vrhunsko umeće pice sa mirom netaknute prirode. Veštinu i tradiciju donose majstori beogradske picerije{' '}
               <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>; mi dajemo prostor, vatru i bazen.
             </p>
-            <p style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.7 }}>
+            <p style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.7, marginBottom: 18 }}>
               Bilo da je reč o učenju zanata, proslavi ili okupljanju tima — ovde pica nije samo jelo, već doživljaj koji ostaje.
+            </p>
+            <p style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.7 }}>
+              Dan počinje od testa koje sazreva svojim tempom, a završava se za stolom uz bazen, dok sunce zalazi nad ravnicom.
+              Između — smeh, brašno na rukama i miris pice koja izlazi iz peći.
             </p>
           </div>
           <div className="relative overflow-hidden rounded-lg shadow-lift" style={{ aspectRatio: '4/5' }}>
@@ -44,6 +49,13 @@ export default function ONamaPage() {
           </div>
         </div>
       </section>
+
+      {/* Atmosferični predah */}
+      <AtmosphereQuote
+        image="/images/pool_dusk.jpg"
+        eyebrow="Naša filozofija"
+        quote="Najlepše uspomene se ne kupuju — stvaraju se. Rukama, oko vatre, uz one do kojih nam je stalo."
+      />
 
       {/* Vrednosti */}
       <section style={{ background: '#fff' }} className="py-16 md:py-28">
