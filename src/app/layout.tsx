@@ -2,30 +2,31 @@ import type { Metadata } from "next";
 import JsonLd from "@/components/ui/JsonLd";
 import "./globals.css";
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://majstorimargarita.rs';
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://napolitanalab.rs';
 
 export const metadata: Metadata = {
-  title: { default: "Majstor i Margarita | Privatni venue sa bazenom — Vrdnik, Fruška Gora", template: "%s | Majstor i Margarita" },
-  description: "Premium privatni prostor sa bazenom na Fruškoj Gori. Pizza radionice, team building, proslave i žurke. Blizu Novog Sada i Beograda. Rezervišite online.",
+  title: { default: "Napolitana Lab Vrdnik | Radionica pice i privatni prostor — Fruška Gora", template: "%s | Napolitana Lab Vrdnik" },
+  description: "Radionica napolitanske pice na Fruškoj Gori. Kurs za pizza majstore, team building i proslave uz bazen u privatnom prostoru. Radionice vode majstori iz picerije Majstor i Margarita.",
   metadataBase: new URL(APP_URL),
-  keywords: ["privatni bazen Vrdnik", "team building Fruška gora", "pizza radionica Srbija"],
-  openGraph: { type: "website", siteName: "Majstor i Margarita", locale: "sr_RS", url: APP_URL, images: [{ url: `${APP_URL}/api/og`, width: 1200, height: 630 }] },
+  keywords: ["radionica pice Vrdnik", "kurs za pizza majstore Srbija", "team building Fruška gora", "napolitana pica", "proslava sa bazenom Novi Sad"],
+  openGraph: { type: "website", siteName: "Napolitana Lab Vrdnik", locale: "sr_RS", url: APP_URL, images: [{ url: `${APP_URL}/api/og`, width: 1200, height: 630 }] },
   twitter: { card: "summary_large_image" },
   robots: { index: true, follow: true },
 };
 
 const venueSchema = {
   "@context": "https://schema.org", "@type": "EventVenue",
-  name: "Majstor i Margarita", url: APP_URL, telephone: "+381XXXXXXXXX",
+  name: "Napolitana Lab Vrdnik", url: APP_URL, telephone: "+381XXXXXXXXX",
+  description: "Radionica napolitanske pice i privatni prostor sa bazenom na Fruškoj Gori.",
   address: { "@type": "PostalAddress", addressLocality: "Vrdnik", addressRegion: "Vojvodina", postalCode: "22406", addressCountry: "RS" },
   geo: { "@type": "GeoCoordinates", latitude: "45.1234", longitude: "19.7890" },
   amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Radionica pice", value: true },
     { "@type": "LocationFeatureSpecification", name: "Privatni bazen", value: true },
-    { "@type": "LocationFeatureSpecification", name: "Pizza radionica", value: true },
     { "@type": "LocationFeatureSpecification", name: "Besplatni parking", value: true },
   ],
-  image: `${APP_URL}/images/hero-pool.jpg`,
-  priceRange: "25000-60000 RSD",
+  image: `${APP_URL}/images/pool_dusk.jpg`,
+  priceRange: "5999-14999 RSD",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
