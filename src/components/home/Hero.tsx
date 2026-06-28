@@ -2,56 +2,132 @@
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 
-const SLIDES = [
+export type HeroSlide = { src: string; alt: string };
+
+// Fallback — sve fotografije iz galerije (koristi se ako nisu prosleđene spolja)
+const DEFAULT_SLIDES: HeroSlide[] = [
   { src: '/images/pool_dusk.jpg', alt: 'Bazen u sumrak na imanju u Vrdniku — Napolitana Lab, Fruška Gora' },
   { src: '/images/pool_wide.jpg', alt: 'Pogled na bazen i prostor za radionice pice — Fruška Gora' },
   { src: '/images/pool_person.jpg', alt: 'Opuštanje u bazenu okruženom lavandom — Vrdnik' },
   { src: '/images/terrace_sunset.jpg', alt: 'Terasa sa panoramskim pogledom na Vojvodinu u sumrak' },
+  { src: '/images/garden_view.jpg', alt: 'Uređena bašta sa panoramom Fruškogorske ravnice' },
+  { src: '/images/garden2.jpg', alt: 'Mediteranska bašta sa aromatičnim biljem' },
+  { src: '/images/lavender.jpg', alt: 'Lavanda u cvatu — mirisi Provence na Fruškoj Gori' },
+  { src: '/images/interior_lavender.jpg', alt: 'Enterijer sa lavandom i pogledom na bazen' },
 ];
 
-export default function Hero() {
+const META = [
+  { label: 'Lokacija', value: 'Vrdnik · Fruška Gora' },
+  { label: 'Udaljenost', value: '40 min od NS' },
+  { label: 'Kapacitet', value: 'do 50 gostiju' },
+  { label: 'Ocena', value: '★ 5.0' },
+];
+
+export default function Hero({ slides }: { slides?: HeroSlide[] }) {
+  const SLIDES = slides && slides.length > 0 ? slides : DEFAULT_SLIDES;
   const [current, setCurrent] = useState(0);
-  const goTo = useCallback((idx: number) => setCurrent((idx + SLIDES.length) % SLIDES.length), []);
-  useEffect(() => { const t = setInterval(() => goTo(current + 1), 6000); return () => clearInterval(t); }, [current, goTo]);
+  const goTo = useCallback((idx: number) => setCurrent((idx + SLIDES.length) % SLIDES.length), [SLIDES.length]);
+
+  useEffect(() => {
+    const t = setInterval(() => goTo(current + 1), 6500);
+    return () => clearInterval(t);
+  }, [current, goTo]);
 
   return (
-    <section style={{ position:'relative', height:'100svh', minHeight:'600px', display:'flex', alignItems:'flex-end', paddingBottom:'80px', overflow:'hidden', background:'#1C1C1E' }}>
+    <section className="relative overflow-hidden" style={{ height: '100svh', minHeight: 640, background: '#1C1C1E' }}>
+      {/* SLAJDOVI */}
       {SLIDES.map((slide, i) => (
-        <div key={slide.src} style={{ position:'absolute', inset:0, opacity: i === current ? 1 : 0, transition:'opacity 1.2s ease' }} aria-hidden={i !== current}>
+        <div key={slide.src} className="absolute inset-0" style={{ opacity: i === current ? 1 : 0, transition: 'opacity 1.4s var(--ease-premium)' }} aria-hidden={i !== current}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={slide.src} alt={slide.alt} loading={i === 0 ? 'eager' : 'lazy'}
-            style={{ width:'100%', height:'100%', objectFit:'cover', objectPosition:'center',
-              transform: i === current ? 'scale(1.04)' : 'scale(1)',
-              transition: i === current ? 'transform 8s ease-in-out' : 'none' }} />
+          <img
+            src={slide.src}
+            alt={slide.alt}
+            loading={i === 0 ? 'eager' : 'lazy'}
+            style={{
+              width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
+              transform: i === current ? 'scale(1.12)' : 'scale(1)',
+              transition: i === current ? 'transform 9s ease-out' : 'none',
+            }}
+          />
         </div>
       ))}
-      <div style={{ position:'absolute', inset:0, background:'linear-gradient(to top, rgba(28,28,30,0.82) 0%, rgba(28,28,30,0.3) 50%, transparent 100%)', pointerEvents:'none' }} />
-      <div style={{ position:'absolute', bottom:'88px', left:'20px', zIndex:10, display:'flex', gap:'8px' }}>
+
+      {/* GRADIJENTI — kinematski, čitljivost + dubina */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(28,28,30,0.88) 0%, rgba(28,28,30,0.35) 45%, rgba(28,28,30,0.15) 100%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(28,28,30,0.55) 0%, transparent 55%)' }} />
+      <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: 'inset 0 0 200px rgba(0,0,0,0.4)' }} />
+
+      {/* SADRŽAJ */}
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-center">
+        <div className="max-w-2xl">
+          <p className="eyebrow mb-6" style={{ color: '#C9A84C' }}>
+            Radionica napolitanske pice
+          </p>
+
+          <h1
+            className="font-display"
+            style={{ fontWeight: 500, fontSize: 'var(--text-hero)', lineHeight: 0.98, letterSpacing: '-0.02em', color: '#fff', marginBottom: 24 }}
+          >
+            Naučite pravu
+            <br />
+            <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#E0C878' }}>napolitansku</em> picu
+          </h1>
+
+          <p style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 440 }}>
+            Radionice, proslave i team building uz bazen na Fruškoj Gori —
+            sa majstorima iz picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
+          </p>
+
+          <div className="flex flex-wrap items-center" style={{ gap: 14 }}>
+            <Link href="/rezervacija" className="btn btn-primary">
+              Rezervišite termin →
+            </Link>
+            <Link href="/paketi" className="btn btn-ghost">
+              Pogledajte programe
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* META TRAKA — premium venue činjenice */}
+      <style>{`
+        .hero-meta { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(201,168,76,0.3); }
+        .hero-meta__cell { padding: 18px 0 18px 18px; border-left: 1px solid rgba(255,255,255,0.1); }
+        .hero-meta__cell:nth-child(2n+1) { border-left: none; padding-left: 0; }
+        @media (min-width: 768px) {
+          .hero-meta { grid-template-columns: repeat(4, 1fr); }
+          .hero-meta__cell:nth-child(2n+1) { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px; }
+          .hero-meta__cell:nth-child(4n+1) { border-left: none; padding-left: 0; }
+        }
+      `}</style>
+      <div className="absolute z-10 inset-x-0" style={{ bottom: 0 }}>
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
+          <div className="hero-meta">
+            {META.map((m) => (
+              <div key={m.label} className="hero-meta__cell">
+                <p style={{ fontSize: 10, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginBottom: 4 }}>{m.label}</p>
+                <p className="font-display" style={{ fontSize: 18, fontWeight: 500, color: '#fff' }}>{m.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* SLIDE INDIKATORI */}
+      <div className="absolute z-20 flex" style={{ top: '50%', transform: 'translateY(-50%)', right: 24, flexDirection: 'column', gap: 10 }}>
         {SLIDES.map((_, i) => (
-          <button key={i} onClick={() => goTo(i)} aria-label={`Slika ${i + 1}`}
-            style={{ height:'2px', borderRadius:'1px', border:'none', cursor:'pointer', padding:0,
-              background: i === current ? '#C9A84C' : 'rgba(255,255,255,0.35)',
-              width: i === current ? '40px' : '20px', transition:'all 0.35s ease' }} />
+          <button
+            key={i}
+            onClick={() => goTo(i)}
+            aria-label={`Slika ${i + 1}`}
+            style={{
+              width: 2, border: 'none', cursor: 'pointer', padding: 0, borderRadius: 2,
+              height: i === current ? 32 : 16,
+              background: i === current ? '#C9A84C' : 'rgba(255,255,255,0.4)',
+              transition: 'all 0.4s var(--ease-premium)',
+            }}
+          />
         ))}
-      </div>
-      <div style={{ position:'relative', zIndex:10, padding:'0 20px', maxWidth:'600px' }}>
-        <p style={{ fontSize:'11px', fontWeight:500, letterSpacing:'0.18em', textTransform:'uppercase', color:'#C9A84C', marginBottom:'16px', display:'flex', alignItems:'center', gap:'12px' }}>
-          <span style={{ display:'inline-block', width:'32px', height:'1px', background:'rgba(201,168,76,0.7)' }} />
-          Napolitana Lab · Vrdnik
-        </p>
-        <h1 style={{ fontFamily:'Cormorant Garamond, Georgia, serif', fontWeight:500, fontSize:'clamp(42px, 10.5vw, 80px)', lineHeight:1.0, letterSpacing:'-0.015em', color:'white', marginBottom:'22px' }}>
-          Naučite pravu<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.85)' }}>napolitansku picu</em>
-        </h1>
-        <p style={{ fontSize:'16px', fontWeight:300, color:'rgba(255,255,255,0.72)', lineHeight:1.65, marginBottom:'36px', maxWidth:'340px' }}>
-          Radionice, proslave i team building uz bazen na Fruškoj Gori — sa majstorima iz picerije Majstor i Margarita.
-        </p>
-        <Link href="/rezervacija" style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#5C1A2E', color:'white', fontSize:'13px', fontWeight:700, letterSpacing:'0.07em', textTransform:'uppercase', padding:'0 32px', height:'52px', borderRadius:'2px', textDecoration:'none' }}>
-          Rezervišite termin →
-        </Link>
-      </div>
-      <div style={{ position:'absolute', bottom:'28px', left:'50%', transform:'translateX(-50%)', zIndex:10, display:'flex', flexDirection:'column', alignItems:'center', gap:'8px', opacity:0.6 }} aria-hidden="true">
-        <span style={{ fontSize:'9px', letterSpacing:'0.2em', textTransform:'uppercase', color:'rgba(255,255,255,0.7)' }}>Skrolujte</span>
-        <span style={{ width:'1px', height:'32px', background:'linear-gradient(to bottom, rgba(201,168,76,0.8), transparent)' }} />
       </div>
     </section>
   );

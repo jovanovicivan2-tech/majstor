@@ -1,6 +1,22 @@
 import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import JsonLd from "@/components/ui/JsonLd";
 import "./globals.css";
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://napolitanalab.rs';
 
@@ -31,8 +47,10 @@ const venueSchema = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sr">
+    <html lang="sr" className={`${cormorant.variable} ${inter.variable}`}>
       <head>
+        {/* PRIVREMENO: literalni font-family u još-neredizajniranim komponentama.
+            Ukloniti kad sve pređe na var(--font-display)/var(--font-body). */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />

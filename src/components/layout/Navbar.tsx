@@ -9,12 +9,16 @@ const NAV = [
   { href: '/o-nama', label: 'O nama' },
 ];
 
+const PHONE = '065 387 7777';
+const EMAIL = 'jovanovicivan2@gmail.com';
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 60);
+    fn();
     window.addEventListener('scroll', fn, { passive: true });
     return () => window.removeEventListener('scroll', fn);
   }, []);
@@ -24,58 +28,171 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ''; };
   }, [open]);
 
-  const dark = scrolled && !open;
-  const logoColor = open ? 'white' : (scrolled ? '#5C1A2E' : 'white');
-  const lineColor = open ? 'white' : (scrolled ? '#5C1A2E' : 'white');
+  const solid = scrolled && !open;
+  const onLight = solid; // tamni tekst na svetloj podlozi
 
   return (
     <>
       <style>{`
         .nav-desktop { display: none; }
-        .nav-burger { display: flex; }
-        @media (min-width: 880px) {
+        .nav-burger  { display: flex; }
+        @media (min-width: 900px) {
           .nav-desktop { display: flex; }
-          .nav-burger { display: none; }
+          .nav-burger  { display: none; }
         }
       `}</style>
 
-      <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 60, height: 64, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', transition: 'background 0.3s', background: dark ? 'rgba(247,242,234,0.96)' : 'transparent', backdropFilter: dark ? 'blur(8px)' : 'none', boxShadow: dark ? '0 1px 0 rgba(0,0,0,0.06)' : 'none' }}>
-        <Link href="/" onClick={() => setOpen(false)} style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: 22, fontWeight: 600, color: logoColor, textDecoration: 'none', display: 'flex', alignItems: 'center', minHeight: 44, letterSpacing: '0.01em', zIndex: 61, transition: 'color 0.3s' }}>Napolitana&nbsp;Lab</Link>
+      <header
+        className="fixed top-0 inset-x-0 z-[60] transition-all duration-500"
+        style={{
+          background: solid ? 'rgba(247,242,234,0.92)' : 'transparent',
+          backdropFilter: solid ? 'blur(12px)' : 'none',
+          borderBottom: solid ? '1px solid rgba(138,126,114,0.18)' : '1px solid transparent',
+        }}
+      >
+        <nav
+          className="max-w-7xl mx-auto flex items-center justify-between px-5 md:px-10 transition-all duration-500"
+          style={{ height: solid ? 64 : 80 }}
+        >
+          {/* Logo */}
+          <Link
+            href="/"
+            onClick={() => setOpen(false)}
+            className="font-display relative z-[61] inline-flex items-center transition-colors duration-300"
+            style={{
+              fontSize: 24,
+              fontWeight: 600,
+              letterSpacing: '0.01em',
+              color: open ? '#fff' : onLight ? '#5C1A2E' : '#fff',
+            }}
+          >
+            Napolitana&nbsp;<span style={{ color: '#C9A84C' }}>Lab</span>
+          </Link>
 
-        {/* DESKTOP meni */}
-        <div className="nav-desktop" style={{ gap: 24, alignItems: 'center' }}>
-          {NAV.map(l => <Link key={l.href} href={l.href} style={{ fontSize: 13, fontWeight: 500, color: scrolled ? '#8A7E72' : 'rgba(255,255,255,0.8)', textDecoration: 'none' }}>{l.label}</Link>)}
-          <Link href="/rezervacija" style={{ background: '#5C1A2E', color: 'white', fontSize: 12, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', padding: '0 20px', height: 40, display: 'flex', alignItems: 'center', borderRadius: 2, textDecoration: 'none' }}>Rezerviši</Link>
-        </div>
+          {/* Desktop meni */}
+          <div className="nav-desktop items-center" style={{ gap: 36 }}>
+            {NAV.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="link-underline transition-colors duration-300"
+                style={{
+                  fontSize: 13,
+                  fontWeight: 500,
+                  letterSpacing: '0.02em',
+                  color: onLight ? '#5C1A2E' : 'rgba(255,255,255,0.85)',
+                }}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <Link href="/rezervacija" className="btn btn-primary" style={{ height: 44, padding: '0 24px', fontSize: 11 }}>
+              Rezerviši
+            </Link>
+          </div>
 
-        {/* MOBILNI hamburger */}
-        <button className="nav-burger" onClick={() => setOpen(o => !o)} aria-label={open ? 'Zatvori meni' : 'Otvori meni'} aria-expanded={open}
-          style={{ flexDirection: 'column', justifyContent: 'center', gap: 5, width: 44, height: 44, background: 'transparent', border: 'none', cursor: 'pointer', padding: 0, zIndex: 61 }}>
-          <span style={{ display: 'block', width: 24, height: 2, background: lineColor, borderRadius: 2, transition: 'transform 0.3s, opacity 0.3s', transform: open ? 'translateY(7px) rotate(45deg)' : 'none' }} />
-          <span style={{ display: 'block', width: 24, height: 2, background: lineColor, borderRadius: 2, transition: 'opacity 0.2s', opacity: open ? 0 : 1 }} />
-          <span style={{ display: 'block', width: 24, height: 2, background: lineColor, borderRadius: 2, transition: 'transform 0.3s, opacity 0.3s', transform: open ? 'translateY(-7px) rotate(-45deg)' : 'none' }} />
-        </button>
-      </nav>
+          {/* Mobilni hamburger */}
+          <button
+            className="nav-burger relative z-[61] flex-col items-center justify-center"
+            onClick={() => setOpen((o) => !o)}
+            aria-label={open ? 'Zatvori meni' : 'Otvori meni'}
+            aria-expanded={open}
+            style={{ gap: 6, width: 44, height: 44, background: 'transparent', border: 'none', cursor: 'pointer', padding: 0 }}
+          >
+            {[0, 1, 2].map((i) => (
+              <span
+                key={i}
+                style={{
+                  display: 'block', width: 26, height: 2, borderRadius: 2,
+                  background: open ? '#fff' : onLight ? '#5C1A2E' : '#fff',
+                  transition: 'transform 0.32s var(--ease-premium), opacity 0.2s',
+                  transform: open
+                    ? i === 0 ? 'translateY(8px) rotate(45deg)' : i === 2 ? 'translateY(-8px) rotate(-45deg)' : 'none'
+                    : 'none',
+                  opacity: open && i === 1 ? 0 : 1,
+                }}
+              />
+            ))}
+          </button>
+        </nav>
+      </header>
 
-      {/* MOBILNI full-screen overlay */}
-      <div style={{ position: 'fixed', inset: 0, zIndex: 55, background: '#1C1C1E', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '0 32px', transform: open ? 'translateX(0)' : 'translateX(100%)', transition: 'transform 0.32s ease', visibility: open ? 'visible' : 'hidden' }}>
-        <nav style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+      {/* Mobilni full-screen overlay */}
+      <div
+        className="fixed inset-0 z-[55] flex flex-col justify-center px-8 transition-transform duration-300"
+        style={{
+          background: 'linear-gradient(160deg, #43101F 0%, #1C1C1E 100%)',
+          transform: open ? 'translateX(0)' : 'translateX(100%)',
+          visibility: open ? 'visible' : 'hidden',
+        }}
+      >
+        {/* Suptilna tekstura */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            opacity: 0.05,
+            backgroundImage: 'radial-gradient(circle, #F7F2EA 1px, transparent 1px)',
+            backgroundSize: '26px 26px',
+          }}
+        />
+        <span className="eyebrow relative mb-8" style={{ color: '#C9A84C' }}>Meni</span>
+        <nav className="relative flex flex-col">
           {NAV.map((l, i) => (
-            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
-              style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: 34, fontWeight: 500, color: 'white', textDecoration: 'none', padding: '12px 0', borderBottom: '1px solid rgba(255,255,255,0.08)', opacity: open ? 1 : 0, transform: open ? 'translateY(0)' : 'translateY(12px)', transition: `opacity 0.4s ${0.1 + i * 0.06}s, transform 0.4s ${0.1 + i * 0.06}s` }}>
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="font-display border-b"
+              style={{
+                fontSize: 36, fontWeight: 500, color: '#fff', textDecoration: 'none',
+                padding: '14px 0', borderColor: 'rgba(255,255,255,0.1)',
+                opacity: open ? 1 : 0,
+                transform: open ? 'translateY(0)' : 'translateY(14px)',
+                transition: `opacity 0.5s ${0.12 + i * 0.07}s var(--ease-premium), transform 0.5s ${0.12 + i * 0.07}s var(--ease-premium)`,
+              }}
+            >
               {l.label}
             </Link>
           ))}
-          <Link href="/rezervacija" onClick={() => setOpen(false)}
-            style={{ marginTop: 28, background: '#5C1A2E', color: 'white', fontSize: 14, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', height: 56, borderRadius: 2, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, opacity: open ? 1 : 0, transition: 'opacity 0.4s 0.36s' }}>
-            Rezerviši termin
+          <Link
+            href="/rezervacija"
+            onClick={() => setOpen(false)}
+            className="btn btn-primary"
+            style={{
+              marginTop: 32, width: '100%',
+              opacity: open ? 1 : 0, transition: 'opacity 0.5s 0.4s',
+            }}
+          >
+            Rezerviši termin →
           </Link>
-          <div style={{ marginTop: 32, opacity: open ? 1 : 0, transition: 'opacity 0.4s 0.42s' }}>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 4 }}>📞 065 387 7777</p>
-            <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)' }}>📧 jovanovicivan2@gmail.com</p>
+
+          <div className="mt-10 flex flex-col gap-3" style={{ opacity: open ? 1 : 0, transition: 'opacity 0.5s 0.46s' }}>
+            <a href={`tel:${PHONE.replace(/\s/g, '')}`} className="inline-flex items-center gap-3" style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14 }}>
+              <PhoneIcon /> {PHONE}
+            </a>
+            <a href={`mailto:${EMAIL}`} className="inline-flex items-center gap-3" style={{ color: 'rgba(255,255,255,0.6)', fontSize: 14 }}>
+              <MailIcon /> {EMAIL}
+            </a>
           </div>
         </nav>
       </div>
     </>
+  );
+}
+
+function PhoneIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z" />
+    </svg>
+  );
+}
+
+function MailIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m22 7-10 6L2 7" />
+    </svg>
   );
 }

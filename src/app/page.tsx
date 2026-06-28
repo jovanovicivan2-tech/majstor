@@ -11,7 +11,20 @@ import CTASection from '@/components/home/CTASection';
 import StickyCTA from '@/components/home/StickyCTA';
 import ChatWidget from '@/components/robots/ChatWidget';
 import Reveal from '@/components/ui/Reveal';
-import type { Package } from '@/types';
+import type { HeroSlide } from '@/components/home/Hero';
+import type { Package, GalleryImage } from '@/types';
+
+// Sve fotografije iz galerije — vrte se u Hero slideshow-u na naslovnoj.
+const GALLERY_FALLBACK: HeroSlide[] = [
+  { src: '/images/pool_dusk.jpg', alt: 'Privatni bazen u sumrak — Napolitana Lab, Fruška Gora' },
+  { src: '/images/pool_wide.jpg', alt: 'Pogled na bazen i prostor za radionice pice' },
+  { src: '/images/pool_person.jpg', alt: 'Opuštanje u kristalno čistom bazenu' },
+  { src: '/images/terrace_sunset.jpg', alt: 'Terasa sa panoramskim pogledom na Vojvodinu' },
+  { src: '/images/garden_view.jpg', alt: 'Uređena bašta sa panoramom Fruškogorske ravnice' },
+  { src: '/images/garden2.jpg', alt: 'Mediteranska bašta sa aromatičnim biljem' },
+  { src: '/images/lavender.jpg', alt: 'Lavanda u cvatu — mirisi Provence na Fruškoj Gori' },
+  { src: '/images/interior_lavender.jpg', alt: 'Enterijer sa lavandom i pogledom na bazen' },
+];
 
 const FALLBACK: Package[] = [
   { id: '1', slug: 'pizza-kurs', name_sr: 'Kurs za pizza majstore', name_en: null, description_sr: 'Jednodnevni intenziv napolitanske pice. Majstori iz picerije Majstor i Margarita uče vas razvlačenju, filovanju i pečenju u pravoj peći.', description_en: null, includes: ['Ceo dan obuke sa majstorom', 'Razvlačenje, filovanje, pečenje', 'Svi sastojci i oprema', 'Vaše pice uz piće pored bazena'], base_price_rsd: 14999, price_per_person_rsd: 14999, min_guests: 1, max_guests: 30, duration_hours: 8, deposit_percentage: 30, is_active: true, sort_order: 1, created_at: '' },
@@ -28,16 +41,26 @@ const FEATURES = [
 
 export default async function HomePage() {
   let packages: Package[] = FALLBACK;
+  let heroSlides: HeroSlide[] = GALLERY_FALLBACK;
   try {
     const supabase = await createClient();
-    const { data } = await supabase.from('packages').select('*').eq('is_active', true).order('sort_order');
-    if (data && data.length > 0) packages = data as Package[];
+    const [pkgRes, galRes] = await Promise.all([
+      supabase.from('packages').select('*').eq('is_active', true).order('sort_order'),
+      supabase.from('gallery').select('*').order('sort_order'),
+    ]);
+    if (pkgRes.data && pkgRes.data.length > 0) packages = pkgRes.data as Package[];
+    if (galRes.data && galRes.data.length > 0) {
+      heroSlides = (galRes.data as GalleryImage[]).map((g) => ({
+        src: g.url,
+        alt: g.alt_sr ?? 'Napolitana Lab — Vrdnik, Fruška Gora',
+      }));
+    }
   } catch { /* koristi fallback */ }
 
   return (
     <>
       <Navbar />
-      <div data-hero><Hero /></div>
+      <div data-hero><Hero slides={heroSlides} /></div>
       <Reveal>
         <div className="px-5 md:px-10 pt-16 text-center">
           <div className="divider-gold max-w-xs mx-auto mb-12"><span style={{ color: '#C9A84C' }}>✦</span></div>
