@@ -1,4 +1,10 @@
 import Link from 'next/link';
+import ImageRotator from '@/components/ui/ImageRotator';
+
+const PIZZA_SLIDES = [
+  { src: '/images/pizza-testo.jpg', alt: 'Razvlačenje testa rukom — napolitanska tehnika' },
+  { src: '/images/pizza-margherita.jpg', alt: 'Napolitanska margherita iz krušne peći' },
+];
 
 const STEPS = [
   { num: '01', title: 'Testo', sub: 'Mešenje i odmaranje, kako tradicija nalaže' },
@@ -12,14 +18,7 @@ export default function PizzaSection() {
       <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:items-stretch">
         {/* SLIKA + pull-quote */}
         <div className="relative h-[280px] md:h-auto md:min-h-[640px] overflow-hidden">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/pizza-testo.jpg"
-            alt="Razvlačenje testa rukom — napolitanska tehnika, Majstor i Margarita"
-            className="absolute inset-0 w-full h-full object-cover"
-            style={{ objectPosition: 'center' }}
-            loading="lazy"
-          />
+          <ImageRotator images={PIZZA_SLIDES} interval={4500} />
           <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(28,28,30,0.25) 0%, rgba(28,28,30,0.85) 100%)' }} />
           <div className="absolute bottom-7 left-6 right-6 md:left-10 md:right-10">
             <p className="font-display" style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontStyle: 'italic', color: '#fff', lineHeight: 1.35, maxWidth: 460 }}>

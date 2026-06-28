@@ -24,7 +24,6 @@ const GALLERY_FALLBACK: HeroSlide[] = [
   { src: '/images/garden_view.jpg', alt: 'Uređena bašta sa panoramom Fruškogorske ravnice' },
   { src: '/images/garden2.jpg', alt: 'Mediteranska bašta sa aromatičnim biljem' },
   { src: '/images/lavender.jpg', alt: 'Lavanda u cvatu — mirisi Provence na Fruškoj Gori' },
-  { src: '/images/interior_lavender.jpg', alt: 'Enterijer sa lavandom i pogledom na bazen' },
 ];
 
 const FALLBACK: Package[] = [

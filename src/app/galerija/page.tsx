@@ -19,7 +19,6 @@ const FALLBACK: GalleryImage[] = [
   { id: '5', category: 'ambijent', url: '/images/garden_view.jpg', alt_sr: 'Uređena bašta sa terasom i panoramom Fruškogorske ravnice', alt_en: 'Garden with terrace', is_featured: false, sort_order: 5, created_at: '' },
   { id: '6', category: 'ambijent', url: '/images/garden2.jpg', alt_sr: 'Mediteranska bašta sa aromatičnim biljem i šljunkom', alt_en: 'Mediterranean garden', is_featured: false, sort_order: 6, created_at: '' },
   { id: '7', category: 'ambijent', url: '/images/lavender.jpg', alt_sr: 'Lavanda u cvatu — mirisi Provence na Fruškoj Gori', alt_en: 'Lavender in bloom', is_featured: true, sort_order: 7, created_at: '' },
-  { id: '8', category: 'ambijent', url: '/images/interior_lavender.jpg', alt_sr: 'Enterijer sa lavandom i pogledom na bazen kroz staklene zidove', alt_en: 'Interior with lavender', is_featured: false, sort_order: 8, created_at: '' },
 ];
 
 export default async function GalerijaPage() {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/layout/PageHero';
+import CertificateGallery from '@/components/home/CertificateGallery';
 
 export const metadata: Metadata = {
   title: 'O nama',
@@ -64,6 +65,24 @@ export default function ONamaPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Saradnja & priznanja */}
+      <section style={{ background: '#1C1C1E' }} className="py-16 md:py-28">
+        <div className="max-w-7xl mx-auto px-5 md:px-10">
+          <div className="md:max-w-2xl mb-12 md:mb-16">
+            <p className="eyebrow" style={{ color: '#C9A84C' }}>Saradnja · Majstor i Margarita</p>
+            <h2 className="font-display mt-4" style={{ fontWeight: 500, fontSize: 'var(--text-d-2xl)', color: '#fff', lineHeight: 1.05, marginBottom: 18 }}>
+              Majstori među najboljima u Evropi
+            </h2>
+            <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.68)', lineHeight: 1.6 }}>
+              Radionice vode majstori beogradske picerije <span style={{ color: '#fff' }}>Majstor i Margarita</span> —
+              koja je šest godina zaredom na listi <em style={{ fontStyle: 'italic', color: '#E0C878' }}>50 Top Pizza</em>,
+              među najboljim picerijama Evrope, uz titulu najbolje u Srbiji 2022. i 2023. godine.
+            </p>
+          </div>
+          <CertificateGallery />
         </div>
       </section>
 

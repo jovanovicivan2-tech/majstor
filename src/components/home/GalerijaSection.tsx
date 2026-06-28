@@ -7,7 +7,6 @@ const PHOTOS = [
   { src: '/images/lavender.jpg', alt: 'Lavanda u cvatu — Fruška Gora', cls: '', cat: 'Ambijent' },
   { src: '/images/terrace_sunset.jpg', alt: 'Terasa sa panoramom', cls: '', cat: 'Ambijent' },
   { src: '/images/pool_person.jpg', alt: 'Opuštanje u bazenu', cls: '', cat: 'Bazen' },
-  { src: '/images/interior_lavender.jpg', alt: 'Enterijer sa lavandom', cls: '', cat: 'Enterijer' },
   { src: '/images/garden_view.jpg', alt: 'Uređena bašta', cls: 'col-span-2', cat: 'Ambijent' },
   { src: '/images/pool_wide.jpg', alt: 'Pogled na bazen i prostor', cls: '', cat: 'Bazen' },
   { src: '/images/garden2.jpg', alt: 'Mediteranska bašta', cls: '', cat: 'Ambijent' },
