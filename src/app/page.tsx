@@ -62,23 +62,26 @@ export default async function HomePage() {
       <Navbar />
       <div data-hero><Hero slides={heroSlides} /></div>
       <Reveal>
-        <div className="px-5 md:px-10 pt-16 text-center">
-          <div className="divider-gold max-w-xs mx-auto mb-12"><span style={{ color: '#C9A84C' }}>✦</span></div>
-          <p className="font-serif leading-relaxed max-w-lg mx-auto mb-8" style={{ fontSize: 'clamp(20px, 5vw, 28px)', color: '#1C1C1E' }}>
-            Napolitana Lab nije obična radionica.<br />
-            To je mesto gde <strong style={{ color: '#5C1A2E' }}>majstori pice</strong> dele svoje znanje,<br />a vi učite, jedete i uživate pored bazena.
+        <div className="max-w-7xl mx-auto px-5 md:px-10 pt-20 md:pt-32">
+          <div className="divider-gold max-w-[200px] mx-auto mb-12"><span style={{ color: '#C9A84C' }}>✦</span></div>
+          <p className="font-display leading-snug max-w-3xl mx-auto text-center" style={{ fontSize: 'var(--text-d-lg)', color: '#1C1C1E', fontWeight: 400 }}>
+            Napolitana Lab nije obična radionica. To je mesto gde{' '}
+            <em style={{ fontStyle: 'italic', color: '#5C1A2E' }}>majstori pice</em> dele svoje znanje,
+            a vi učite, jedete i uživate pored bazena.
           </p>
-          <p className="max-w-md mx-auto mb-12" style={{ fontSize: '14px', color: '#8A7E72', lineHeight: 1.6 }}>
-            Radionice vode pizza majstori iz picerije <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>, na prelepom imanju u srcu Fruške Gore.
+          <p className="max-w-xl mx-auto text-center mt-6" style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.65 }}>
+            Radionice vode pizza majstori iz picerije{' '}
+            <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>, na prelepom imanju u srcu Fruške Gore.
           </p>
-          <div className="grid grid-cols-2" style={{ gap: '14px' }}>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-16" style={{ background: 'rgba(138,126,114,0.16)', borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(138,126,114,0.16)' }}>
             {FEATURES.map((f) => (
-              <div key={f.label} className="card-hover" style={{ background: 'white', borderRadius: 4, padding: '28px 18px', textAlign: 'center', boxShadow: '0 2px 8px rgba(28,28,30,0.04), 0 8px 24px rgba(28,28,30,0.04)' }}>
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: 14, display: 'inline-block' }} aria-hidden="true">
-                  <path d={f.icon} />
-                </svg>
-                <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#5C1A2E', marginBottom: '5px' }}>{f.label}</p>
-                <p style={{ fontSize: '13px', color: '#8A7E72', lineHeight: 1.45 }}>{f.desc}</p>
+              <div key={f.label} className="text-center transition-colors duration-300" style={{ background: '#F7F2EA', padding: '36px 20px' }}>
+                <span className="inline-flex items-center justify-center mb-4" style={{ width: 52, height: 52, borderRadius: 999, background: 'rgba(201,168,76,0.12)' }}>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d={f.icon} /></svg>
+                </span>
+                <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#5C1A2E', marginBottom: 5 }}>{f.label}</p>
+                <p style={{ fontSize: 13, color: '#8A7E72', lineHeight: 1.45 }}>{f.desc}</p>
               </div>
             ))}
           </div>

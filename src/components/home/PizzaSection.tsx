@@ -1,61 +1,64 @@
 import Link from 'next/link';
 
 const STEPS = [
-  { num: '1', title: 'Priprema testa', sub: '30 minuta · Tajne pravog mešenja' },
-  { num: '2', title: 'Razvlačenje i filovanje', sub: 'Naučite tehniku pravih majstora' },
-  { num: '3', title: 'Pečenje & degustacija', sub: 'Uz piće, pored bazena' },
+  { num: '01', title: 'Priprema testa', sub: '30 minuta · Tajne pravog mešenja' },
+  { num: '02', title: 'Razvlačenje i filovanje', sub: 'Naučite tehniku pravih majstora' },
+  { num: '03', title: 'Pečenje & degustacija', sub: 'Uz piće, pored bazena' },
 ];
 
 export default function PizzaSection() {
   return (
-    <section style={{ background: '#1C1C1E' }}>
-      <div style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/images/pool_person.jpg"
-          alt="Opuštanje u bazenu okruženom lavandom — savršen letnji dan na Fruškoj Gori"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 35%' }}
-          loading="lazy"
-        />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(28,28,30,0.35) 0%, rgba(28,28,30,0.88) 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 28, left: 20, right: 20 }}>
-          <p style={{
-            fontFamily: 'Cormorant Garamond, Georgia, serif',
-            fontSize: 'clamp(18px, 4vw, 24px)',
-            fontStyle: 'italic',
-            color: 'white',
-            lineHeight: 1.35,
-            maxWidth: 460,
-          }}>
-            "Napravite svoju picu — i pojedite je pored bazena, naravno."
-          </p>
+    <section style={{ background: '#1C1C1E' }} className="overflow-hidden">
+      <div className="max-w-7xl mx-auto md:grid md:grid-cols-2 md:items-stretch">
+        {/* SLIKA + pull-quote */}
+        <div className="relative h-[280px] md:h-auto md:min-h-[640px] overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/interior_lavender.jpg"
+            alt="Enterijer sa pogledom na bazen — radionica pice na Fruškoj Gori"
+            className="absolute inset-0 w-full h-full object-cover"
+            style={{ objectPosition: 'center' }}
+            loading="lazy"
+          />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(28,28,30,0.25) 0%, rgba(28,28,30,0.85) 100%)' }} />
+          <div className="absolute bottom-7 left-6 right-6 md:left-10 md:right-10">
+            <p className="font-display" style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontStyle: 'italic', color: '#fff', lineHeight: 1.35, maxWidth: 460 }}>
+              „Napravite svoju picu — i pojedite je pored bazena, naravno.”
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div style={{ padding: '48px 20px 64px', maxWidth: 520 }}>
-        <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: 12 }}>
-          Radionica pice
-        </p>
-        <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontWeight: 500, fontSize: 'clamp(28px, 7vw, 40px)', color: 'white', lineHeight: 1.15, marginBottom: 16 }}>
-          Postanite pizza<br />majstor za jedan dan
-        </h2>
-        <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, marginBottom: 32 }}>
-          Radionicu vode pizza majstori iz picerije Majstor i Margarita — čuvari tradicije napolitanske pice. Naučićete da mesite i razvlačite testo pravom tehnikom, a onda ćete picu pojesti pored bazena.
-        </p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 36 }}>
-          {STEPS.map(s => (
-            <div key={s.num} style={{ display: 'flex', gap: 16, padding: 16, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 2 }}>
-              <span style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: 32, color: 'rgba(201,168,76,0.4)', lineHeight: 1, minWidth: 32 }}>{s.num}</span>
-              <div>
-                <p style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{s.title}</p>
-                <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>{s.sub}</p>
+        {/* SADRŽAJ */}
+        <div className="px-5 md:px-12 py-14 md:py-20 flex flex-col justify-center" style={{ maxWidth: 580 }}>
+          <p className="eyebrow" style={{ color: '#C9A84C' }}>Radionica pice</p>
+          <h2 className="font-display mt-4" style={{ fontWeight: 500, fontSize: 'var(--text-d-xl)', color: '#fff', lineHeight: 1.08, marginBottom: 18 }}>
+            Postanite pizza majstor za jedan dan
+          </h2>
+          <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, marginBottom: 36 }}>
+            Radionicu vode pizza majstori iz picerije <span style={{ color: '#fff' }}>Majstor i Margarita</span> — čuvari
+            tradicije napolitanske pice. Naučićete da mesite i razvlačite testo pravom tehnikom, a onda ćete picu pojesti pored bazena.
+          </p>
+
+          <div className="flex flex-col" style={{ gap: 0 }}>
+            {STEPS.map((s, i) => (
+              <div
+                key={s.num}
+                className="flex items-center gap-5 py-5"
+                style={{ borderTop: i === 0 ? '1px solid rgba(255,255,255,0.1)' : 'none', borderBottom: '1px solid rgba(255,255,255,0.1)' }}
+              >
+                <span className="font-display" style={{ fontSize: 36, color: 'rgba(201,168,76,0.55)', lineHeight: 1, minWidth: 48 }}>{s.num}</span>
+                <div>
+                  <p style={{ fontSize: 15, fontWeight: 600, color: 'rgba(255,255,255,0.92)', marginBottom: 2 }}>{s.title}</p>
+                  <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)' }}>{s.sub}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <Link href="/paketi" className="btn btn-ghost self-start" style={{ marginTop: 36, color: '#C9A84C', borderColor: 'rgba(201,168,76,0.5)' }}>
+            Saznaj više →
+          </Link>
         </div>
-        <Link href="/paketi" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, border: '1.5px solid rgba(201,168,76,0.6)', color: '#C9A84C', fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', padding: '0 24px', height: 48, borderRadius: 2, textDecoration: 'none' }}>
-          Saznaj više →
-        </Link>
       </div>
     </section>
   );
