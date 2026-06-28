@@ -31,8 +31,8 @@ export default function Footer() {
               Napolitana<span style={{ color: '#C9A84C' }}> Lab</span>
             </Link>
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginTop: 16, maxWidth: 340 }}>
-              Radionica napolitanske pice i privatni prostor sa bazenom na Fruškoj Gori.
-              Radionice vode pizza majstori iz picerije Majstor i Margarita.
+              Radionica napolitanske pice i privatni prostor sa bazenom, skriven u srcu Fruške Gore.
+              Uz majstore picerije Majstor i Margarita.
             </p>
             <a
               href="https://instagram.com/napolitanalab"

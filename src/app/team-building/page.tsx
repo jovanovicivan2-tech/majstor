@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 };
 
 const Z = [
-  { icon: 'M6 11V8a6 6 0 0 1 12 0v3M5 11h14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1ZM12 15v2', t: 'Privatni prostor', d: 'Samo vaš tim — bez stranih lica. Privatni bazen i ceo prostor isključivo za vas.' },
-  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', t: 'Pizza radionica', d: 'Tim zajedno mesi, razvlači i peče picu uz majstore iz picerije Majstor i Margarita.' },
+  { icon: 'M6 11V8a6 6 0 0 1 12 0v3M5 11h14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1ZM12 15v2', t: 'Privatni prostor', d: 'Bez stranih lica — privatni bazen i ceo prostor isključivo za vaš tim.' },
+  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', t: 'Pizza radionica', d: 'Tim zajedno mesi, razvlači i peče, uz majstore picerije Majstor i Margarita.' },
   { icon: 'M3 18v-5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v5M3 18v2M21 18v2M3 14h18M7 11V9a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2', t: 'Opcija prenoćišta', d: 'Za udaljenije timove — prenoćište u obližnjem hotelu, da radionica bude jednodnevna i opuštena.' },
   { icon: 'M7 3h7l4 4v14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1ZM14 3v4h4M9 12h6M9 16h6', t: 'Faktura za firmu', d: 'Kompletna dokumentacija za računovodstvo. PDV faktura, svi oblici plaćanja.' },
   { icon: 'M12 21c-4.5-4-7-7-7-10a7 7 0 0 1 14 0c0 3-2.5 6-7 10ZM12 8a3 3 0 0 0 0 6 3 3 0 0 0 0-6Z', t: '40 min od NS', d: 'Lako dostupno iz Novog Sada i Beograda. Besplatni parking na imanju.' },
@@ -30,8 +30,8 @@ export default function TeamBuildingPage() {
       <Navbar />
       <PageHero
         eyebrow="Team Building"
-        title={<>Team building <em style={{ fontStyle: 'italic', color: '#C9A84C' }}>uz pravu picu</em></>}
-        subtitle="Zajednička iskustva grade timove brže od ijednog workshopa."
+        title={<>Tim koji <em style={{ fontStyle: 'italic', color: '#C9A84C' }}>zajedno stvara</em></>}
+        subtitle="Zajednička iskustva zbližavaju brže od svakog seminara."
         image="/images/pool_dusk.jpg"
       />
 
@@ -39,8 +39,8 @@ export default function TeamBuildingPage() {
       <section style={{ background: '#F7F2EA' }} className="py-16 md:py-24">
         <div className="max-w-3xl mx-auto px-5 md:px-10">
           <p className="font-display" style={{ fontSize: 'var(--text-d-lg)', color: '#1C1C1E', lineHeight: 1.3, fontWeight: 400 }}>
-            Zamislite: vaš tim zajedno pravi picu, gleda je kako se peče u pravoj peći, ruča uz bazen na Fruškoj Gori. Radionicu vode majstori iz picerije{' '}
-            <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong> — to su momenti koji ostaju i koji spajaju ljude na pravi način.
+            Zamislite: vaš tim zajedno mesi testo, posmatra ga kako rumeni na vatri, ruča uz bazen na Fruškoj Gori. Radionicu vode majstori picerije{' '}
+            <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong> — to su trenuci koji ostaju i koji zbližavaju ljude na pravi način.
           </p>
         </div>
       </section>

@@ -22,10 +22,10 @@ export default function CTASection() {
       <div className="relative max-w-7xl mx-auto px-5 md:px-10 py-24 md:py-36 text-center flex flex-col items-center">
         <p className="eyebrow eyebrow--center justify-center" style={{ color: '#C9A84C' }}>Rezervacija</p>
         <h2 className="font-display mt-5" style={{ fontWeight: 500, fontSize: 'var(--text-d-2xl)', color: '#fff', lineHeight: 1.05, marginBottom: 18 }}>
-          Vaš savršeni dan<br />počinje ovde
+          Ovde počinje<br />vaš dan
         </h2>
         <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.72)', lineHeight: 1.6, maxWidth: 420, marginBottom: 40 }}>
-          Dostupni termini popunjavaju se brzo. Osigurajte vaše mesto danas — bez obaveze.
+          Termini se popunjavaju brzo. Obezbedite svoj na vreme — bez obaveze.
         </p>
         <Link href="/rezervacija" className="btn btn-primary" style={{ height: 58, padding: '0 40px' }}>
           Proverite slobodne termine →

@@ -68,7 +68,7 @@ export default function GalerijaSection() {
 
         <div className="mt-10 md:text-center">
           <Link href="/galerija" className="btn btn-outline">
-            Pogledaj sve fotografije →
+            Pogledajte celu galeriju →
           </Link>
         </div>
       </div>

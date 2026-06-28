@@ -4,7 +4,7 @@ interface Message { role: 'user' | 'assistant'; content: string; }
 const QR = ['Koji paketi postoje?', 'Koliko košta?', 'Kako do vas?'];
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [msgs, setMsgs] = useState<Message[]>([{ role: 'assistant', content: 'Zdravo! 👋 Pomažem vam da pronađete savršeni paket. Šta vas zanima?' }]);
+  const [msgs, setMsgs] = useState<Message[]>([{ role: 'assistant', content: 'Dobro došli u Napolitana Lab. Rado ću vam pomoći oko izbora programa. Šta vas zanima?' }]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [count, setCount] = useState(0);
@@ -24,8 +24,12 @@ export default function ChatWidget() {
   };
   return (
     <>
-      <button onClick={() => setOpen(!open)} aria-label="Chat" style={{ position: 'fixed', bottom: 80, right: 20, zIndex: 40, width: 56, height: 56, borderRadius: '50%', border: 'none', cursor: 'pointer', fontSize: 22, background: open ? '#8A7E72' : '#5C1A2E', color: 'white', boxShadow: '0 4px 20px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        {open ? '×' : '💬'}
+      <button onClick={() => setOpen(!open)} aria-label="Chat" style={{ position: 'fixed', bottom: 80, right: 20, zIndex: 40, width: 56, height: 56, borderRadius: '50%', border: 'none', cursor: 'pointer', background: open ? '#8A7E72' : '#5C1A2E', color: 'white', boxShadow: '0 8px 24px rgba(92,26,46,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {open ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+        ) : (
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7a8.5 8.5 0 0 1-.9-3.8A8.38 8.38 0 0 1 12.5 3 8.38 8.38 0 0 1 21 11.5Z" /></svg>
+        )}
       </button>
       {open && (
         <div style={{ position: 'fixed', bottom: 152, right: 16, zIndex: 40, width: 'calc(100vw - 32px)', maxWidth: 360, background: 'white', border: '1px solid #EDE8E0', borderRadius: 4, boxShadow: '0 20px 60px rgba(0,0,0,0.15)', display: 'flex', flexDirection: 'column', maxHeight: 480 }}>

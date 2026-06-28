@@ -68,14 +68,14 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
             className="font-display"
             style={{ fontWeight: 500, fontSize: 'var(--text-hero)', lineHeight: 0.98, letterSpacing: '-0.02em', color: '#fff', marginBottom: 24 }}
           >
-            Naučite pravu
+            Umeće prave
             <br />
-            <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#E0C878' }}>napolitansku</em> picu
+            <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#E0C878' }}>napolitanske</em> pice
           </h1>
 
-          <p style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 440 }}>
-            Radionice, proslave i team building uz bazen na Fruškoj Gori —
-            sa majstorima iz picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
+          <p style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 460 }}>
+            Radionice, proslave i team building — uz vatru krušne peći i mir bazena na Fruškoj Gori.
+            Vode ih majstori picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
           </p>
 
           <div className="flex flex-wrap items-center" style={{ gap: 14 }}>

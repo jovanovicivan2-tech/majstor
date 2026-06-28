@@ -24,8 +24,8 @@ export default async function PaketiPage() {
       <Navbar />
       <PageHero
         eyebrow="Programi"
-        title={<>Izaberite vaš doživljaj</>}
-        subtitle="Radionica pice, proslave i team building — transparentne cene, bez skrivenih troškova."
+        title={<>Svaki povod, svoj doživljaj</>}
+        subtitle="Radionica pice, proslave i team building — jasne cene, bez skrivenih troškova."
         image="/images/pool_wide.jpg"
       />
       <PackagesSection packages={packages} />

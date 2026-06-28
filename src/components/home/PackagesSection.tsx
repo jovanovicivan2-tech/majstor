@@ -29,7 +29,7 @@ function Card({ pkg, featured }: { pkg: Package; featured?: boolean }) {
           color: featured ? '#fff' : '#5C1A2E',
         }}
       >
-        {featured ? '★ Najpopularnije' : 'Program'}
+        {featured ? '★ Izdvojeno' : 'Program'}
       </span>
 
       <h3 className="font-display" style={{ fontSize: 28, fontWeight: 500, color: '#1C1C1E', marginBottom: 10, lineHeight: 1.1 }}>{pkg.name_sr}</h3>
@@ -79,10 +79,10 @@ export default function PackagesSection({ packages }: { packages: Package[] }) {
       <div className="md:text-center md:max-w-2xl md:mx-auto mb-10 md:mb-16">
         <p className="eyebrow md:eyebrow--center md:justify-center">Programi</p>
         <h2 className="font-display mt-4" style={{ fontWeight: 500, fontSize: 'var(--text-d-2xl)', color: '#1C1C1E', lineHeight: 1.05, letterSpacing: '-0.01em' }}>
-          Izaberite vaš doživljaj pice
+          Svaki povod, svoj doživljaj
         </h2>
         <p className="mt-5 hidden md:block" style={{ fontSize: 17, color: '#8A7E72', lineHeight: 1.6 }}>
-          Transparentne cene, bez skrivenih troškova. Svaki program se može prilagoditi povodu.
+          Jasne cene, bez skrivenih troškova. Svaki program prilagođavamo vašem povodu.
         </p>
       </div>
 

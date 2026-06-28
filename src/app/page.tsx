@@ -27,16 +27,16 @@ const GALLERY_FALLBACK: HeroSlide[] = [
 ];
 
 const FALLBACK: Package[] = [
-  { id: '1', slug: 'pizza-kurs', name_sr: 'Kurs za pizza majstore', name_en: null, description_sr: 'Jednodnevni intenziv napolitanske pice. Majstori iz picerije Majstor i Margarita uče vas razvlačenju, filovanju i pečenju u pravoj peći.', description_en: null, includes: ['Ceo dan obuke sa majstorom', 'Razvlačenje, filovanje, pečenje', 'Svi sastojci i oprema', 'Vaše pice uz piće pored bazena'], base_price_rsd: 14999, price_per_person_rsd: 14999, min_guests: 1, max_guests: 30, duration_hours: 8, deposit_percentage: 30, is_active: true, sort_order: 1, created_at: '' },
-  { id: '2', slug: 'proslave', name_sr: 'Proslave i rođendani', name_en: null, description_sr: 'Naši majstori spremaju pice za vaše goste — bez ikakvog opterećenja. Ili gosti sami prave pice uz vođenje. Po osobi: neograničeno pica + neograničeno piće.', description_en: null, includes: ['Neograničeno pica za svakog gosta', 'Neograničeno piće', 'Korišćenje bazena i prostora', 'Opcija: gosti sami prave pice'], base_price_rsd: 5999, price_per_person_rsd: 5999, min_guests: 5, max_guests: 50, duration_hours: 6, deposit_percentage: 30, is_active: true, sort_order: 2, created_at: '' },
-  { id: '3', slug: 'team-building', name_sr: 'Team Building', name_en: null, description_sr: 'Ceo dan za vašu firmu: bazen, sala i zabava, uz pizza radionicu koja spaja tim. Opcija prenoćišta u obližnjem hotelu.', description_en: null, includes: ['Privatni prostor ceo dan', 'Pizza radionica za tim', 'Bazen i sala za druženje', 'Opcija prenoćišta u hotelu', 'Faktura za firmu'], base_price_rsd: 0, price_per_person_rsd: null, min_guests: 10, max_guests: 50, duration_hours: 10, deposit_percentage: 30, is_active: true, sort_order: 3, created_at: '' },
+  { id: '1', slug: 'pizza-kurs', name_sr: 'Kurs za pizza majstore', name_en: null, description_sr: 'Jednodnevni intenziv napolitanske pice. Majstori picerije Majstor i Margarita otkrivaju veštinu razvlačenja, filovanja i pečenja na vatri krušne peći.', description_en: null, includes: ['Ceo dan obuke uz majstora', 'Razvlačenje, filovanje, pečenje', 'Svi sastojci i oprema', 'Vaša pica uz piće, pored bazena'], base_price_rsd: 14999, price_per_person_rsd: 14999, min_guests: 1, max_guests: 30, duration_hours: 8, deposit_percentage: 30, is_active: true, sort_order: 1, created_at: '' },
+  { id: '2', slug: 'proslave', name_sr: 'Proslave i rođendani', name_en: null, description_sr: 'Naši majstori pripremaju picu za vaše goste — ili gosti sami stvaraju svoju, uz vođenje. Po osobi: neograničeno pice i pića.', description_en: null, includes: ['Neograničeno pice za svakog gosta', 'Neograničeno piće', 'Korišćenje bazena i prostora', 'Mogućnost: gosti sami prave picu'], base_price_rsd: 5999, price_per_person_rsd: 5999, min_guests: 5, max_guests: 50, duration_hours: 6, deposit_percentage: 30, is_active: true, sort_order: 2, created_at: '' },
+  { id: '3', slug: 'team-building', name_sr: 'Team Building', name_en: null, description_sr: 'Ceo dan posvećen vašem timu: bazen, prostor i radionica pice koja zbližava. Uz mogućnost prenoćišta u obližnjem hotelu.', description_en: null, includes: ['Privatni prostor ceo dan', 'Radionica pice za tim', 'Bazen i prostor za druženje', 'Mogućnost prenoćišta u hotelu', 'Faktura za firmu'], base_price_rsd: 0, price_per_person_rsd: null, min_guests: 10, max_guests: 50, duration_hours: 10, deposit_percentage: 30, is_active: true, sort_order: 3, created_at: '' },
 ];
 
 const FEATURES = [
-  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', label: 'Napolitana', desc: 'Prava radionica pice' },
-  { icon: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', label: 'Majstori', desc: 'Obuka iz prve ruke' },
-  { icon: 'M3 16c1.5 0 1.5 1.5 3 1.5s1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5M3 20c1.5 0 1.5 1.5 3 1.5s1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5M7 12V5a2 2 0 0 1 4 0M9 9h6', label: 'Bazen', desc: 'Osveženje i opuštanje' },
-  { icon: 'M5 21l1.5-7M19 21l-1.5-7M6 14h12l-1-4H7l-1 4ZM9 10V6m6 4V6M9 6a3 3 0 0 1 6 0M12 6V3', label: 'Proslave', desc: 'Rođendani i druženja' },
+  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', label: 'Napolitana', desc: 'Testo, vatra i tradicija' },
+  { icon: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', label: 'Majstori', desc: 'Umeće iz prve ruke' },
+  { icon: 'M3 16c1.5 0 1.5 1.5 3 1.5s1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5M3 20c1.5 0 1.5 1.5 3 1.5s1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5M7 12V5a2 2 0 0 1 4 0M9 9h6', label: 'Bazen', desc: 'Voda, sunce i mir' },
+  { icon: 'M5 21l1.5-7M19 21l-1.5-7M6 14h12l-1-4H7l-1 4ZM9 10V6m6 4V6M9 6a3 3 0 0 1 6 0M12 6V3', label: 'Proslave', desc: 'Trenuci koji ostaju' },
 ];
 
 export default async function HomePage() {
@@ -65,13 +65,13 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-5 md:px-10 pt-20 md:pt-32">
           <div className="divider-gold max-w-[200px] mx-auto mb-12"><span style={{ color: '#C9A84C' }}>✦</span></div>
           <p className="font-display leading-snug max-w-3xl mx-auto text-center" style={{ fontSize: 'var(--text-d-lg)', color: '#1C1C1E', fontWeight: 400 }}>
-            Napolitana Lab nije obična radionica. To je mesto gde{' '}
-            <em style={{ fontStyle: 'italic', color: '#5C1A2E' }}>majstori pice</em> dele svoje znanje,
-            a vi učite, jedete i uživate pored bazena.
+            Napolitana Lab nije tek radionica. To je mesto gde se{' '}
+            <em style={{ fontStyle: 'italic', color: '#5C1A2E' }}>umeće napolitanske pice</em> prenosi iz ruke u ruku —
+            uz vatru krušne peći i mir bazena.
           </p>
           <p className="max-w-xl mx-auto text-center mt-6" style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.65 }}>
-            Radionice vode pizza majstori iz picerije{' '}
-            <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>, na prelepom imanju u srcu Fruške Gore.
+            Radionice vode majstori picerije{' '}
+            <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>, na imanju skrivenom u srcu Fruške Gore.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px mt-16" style={{ background: 'rgba(138,126,114,0.16)', borderRadius: 8, overflow: 'hidden', border: '1px solid rgba(138,126,114,0.16)' }}>

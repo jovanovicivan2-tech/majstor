@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const VREDNOSTI = [
-  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', title: 'Pravi majstori', desc: 'Obuku vode pizza majstori iz picerije Majstor i Margarita. Znanje iz prve ruke, ne improvizacija.' },
-  { icon: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', title: 'Napolitana', desc: 'Učimo autentičnu tehniku — razvlačenje rukom, pravo testo, pečenje u pravoj peći.' },
-  { icon: 'M3 16c1.5 0 1.5 1.2 3 1.2s1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2M3 20c1.5 0 1.5 1.2 3 1.2s1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2M7 13V6a2 2 0 0 1 4 0M9 10h6', title: 'Uz bazen', desc: 'Sve se dešava na prelepom imanju s bazenom na Fruškoj Gori. Učenje i uživanje na istom mestu.' },
+  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', title: 'Pravi majstori', desc: 'Radionicu vode majstori picerije Majstor i Margarita. Umeće iz prve ruke, bez improvizacije.' },
+  { icon: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', title: 'Napolitana', desc: 'Autentična tehnika — testo mešeno rukom i pečeno na vatri krušne peći.' },
+  { icon: 'M3 16c1.5 0 1.5 1.2 3 1.2s1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2M3 20c1.5 0 1.5 1.2 3 1.2s1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2M7 13V6a2 2 0 0 1 4 0M9 10h6', title: 'Uz bazen', desc: 'Sve se odvija na imanju s bazenom — učenje i uživanje na istom mestu.' },
   { icon: 'M12 22V12M12 12c0-3 2-6 6-7-0.5 4-2.5 6-6 7ZM12 14c0-2.5-1.7-5-5-5.5.4 3.3 2 5 5 5.5Z', title: 'Priroda', desc: 'Mir, zelenilo i pogled na ravnicu — daleko od gradske gužve, a nadohvat ruke.' },
 ];
 
@@ -30,11 +30,11 @@ export default function ONamaPage() {
               Radionica prave napolitanske pice na imanju u srcu Fruške Gore, kod Vrdnika.
             </p>
             <p style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.7, marginBottom: 18 }}>
-              Ideja je jednostavna: spojiti vrhunsko znanje o pici sa prelepim prostorom u prirodi. Zato radionice vode pizza majstori iz beogradske picerije{' '}
-              <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong> — oni donose veštinu i tradiciju, a mi prostor, bazen i atmosferu.
+              Ideja je jednostavna — spojiti vrhunsko umeće pice sa mirom netaknute prirode. Veštinu i tradiciju donose majstori beogradske picerije{' '}
+              <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>; mi dajemo prostor, vatru i bazen.
             </p>
             <p style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.7 }}>
-              Bilo da želite da naučite zanat, proslavite rođendan ili okupite tim — kod nas pica nije samo jelo, već doživljaj koji se pamti.
+              Bilo da je reč o učenju zanata, proslavi ili okupljanju tima — ovde pica nije samo jelo, već doživljaj koji ostaje.
             </p>
           </div>
           <div className="relative overflow-hidden rounded-lg shadow-lift" style={{ aspectRatio: '4/5' }}>
