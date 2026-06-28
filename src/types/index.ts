@@ -1,4 +1,4 @@
-export type PackageSlug = 'samoposluzianje' | 'pizza-experience' | 'full-service' | 'corporate';
+export type PackageSlug = 'pizza-kurs' | 'proslave' | 'team-building' | string;
 
 export interface Package {
   id: string; slug: PackageSlug; name_sr: string; name_en: string | null;
