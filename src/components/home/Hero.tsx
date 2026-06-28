@@ -59,25 +59,25 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
       {/* SADRŽAJ */}
       <div className="relative z-10 h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-center">
         <div className="max-w-2xl">
-          <p className="eyebrow mb-6" style={{ color: '#C9A84C' }}>
+          <p className="eyebrow mb-6 enter-up" style={{ color: '#C9A84C', animationDelay: '0.05s' }}>
             Radionica napolitanske pice
           </p>
 
           <h1
-            className="font-display"
-            style={{ fontWeight: 500, fontSize: 'var(--text-hero)', lineHeight: 0.98, letterSpacing: '-0.02em', color: '#fff', marginBottom: 24 }}
+            className="font-display enter-up"
+            style={{ fontWeight: 500, fontSize: 'var(--text-hero)', lineHeight: 0.98, letterSpacing: '-0.02em', color: '#fff', marginBottom: 24, animationDelay: '0.15s' }}
           >
             Umeće prave
             <br />
             <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#E0C878' }}>napolitanske</em> pice
           </h1>
 
-          <p style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 460 }}>
+          <p className="enter-up" style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 460, animationDelay: '0.3s' }}>
             Radionice, proslave i team building — uz živu vatru i mir bazena na Fruškoj Gori.
             Vode ih majstori picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
           </p>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 enter-up" style={{ animationDelay: '0.45s' }}>
             <Link href="/rezervacija" className="btn btn-primary w-full sm:w-auto">
               Rezervišite termin →
             </Link>

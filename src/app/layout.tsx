@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import JsonLd from "@/components/ui/JsonLd";
+import ScrollProgress from "@/components/ui/ScrollProgress";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -57,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
         <JsonLd data={venueSchema} />
       </head>
-      <body>{children}</body>
+      <body><ScrollProgress />{children}</body>
     </html>
   );
 }
