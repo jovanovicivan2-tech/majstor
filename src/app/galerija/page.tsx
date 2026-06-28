@@ -19,6 +19,8 @@ const FALLBACK: GalleryImage[] = [
   { id: '5', category: 'ambijent', url: '/images/garden_view.jpg', alt_sr: 'Uređena bašta sa terasom i panoramom Fruškogorske ravnice', alt_en: 'Garden with terrace', is_featured: false, sort_order: 5, created_at: '' },
   { id: '6', category: 'ambijent', url: '/images/garden2.jpg', alt_sr: 'Mediteranska bašta sa aromatičnim biljem i šljunkom', alt_en: 'Mediterranean garden', is_featured: false, sort_order: 6, created_at: '' },
   { id: '7', category: 'ambijent', url: '/images/lavender.jpg', alt_sr: 'Lavanda u cvatu — mirisi Provence na Fruškoj Gori', alt_en: 'Lavender in bloom', is_featured: true, sort_order: 7, created_at: '' },
+  { id: '8', category: 'pizzerija', url: '/images/pizza-margherita.jpg', alt_sr: 'Napolitanska margherita iz profesionalne peći', alt_en: 'Neapolitan margherita', is_featured: true, sort_order: 8, created_at: '' },
+  { id: '9', category: 'pizzerija', url: '/images/pizza-testo.jpg', alt_sr: 'Razvlačenje testa rukom — napolitanska tehnika', alt_en: 'Hand-stretched dough', is_featured: false, sort_order: 9, created_at: '' },
 ];
 
 export default async function GalerijaPage() {
