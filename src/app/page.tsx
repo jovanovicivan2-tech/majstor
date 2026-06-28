@@ -20,10 +20,10 @@ const FALLBACK: Package[] = [
 ];
 
 const FEATURES = [
-  { icon: '🍕', label: 'Napolitana', desc: 'Prava radionica pice' },
-  { icon: '🔥', label: 'Majstori', desc: 'Obuka iz prve ruke' },
-  { icon: '🏊', label: 'Bazen', desc: 'Osveženje i opuštanje' },
-  { icon: '🎉', label: 'Proslave', desc: 'Rođendani i druženja' },
+  { icon: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', label: 'Napolitana', desc: 'Prava radionica pice' },
+  { icon: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', label: 'Majstori', desc: 'Obuka iz prve ruke' },
+  { icon: 'M3 16c1.5 0 1.5 1.5 3 1.5s1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5M3 20c1.5 0 1.5 1.5 3 1.5s1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5 1.5 1.5 3 1.5 1.5-1.5 3-1.5M7 12V5a2 2 0 0 1 4 0M9 9h6', label: 'Bazen', desc: 'Osveženje i opuštanje' },
+  { icon: 'M5 21l1.5-7M19 21l-1.5-7M6 14h12l-1-4H7l-1 4ZM9 10V6m6 4V6M9 6a3 3 0 0 1 6 0M12 6V3', label: 'Proslave', desc: 'Rođendani i druženja' },
 ];
 
 export default async function HomePage() {
@@ -48,12 +48,14 @@ export default async function HomePage() {
           <p className="max-w-md mx-auto mb-12" style={{ fontSize: '14px', color: '#8A7E72', lineHeight: 1.6 }}>
             Radionice vode pizza majstori iz picerije <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong>, na prelepom imanju u srcu Fruške Gore.
           </p>
-          <div className="grid grid-cols-2 gap-px overflow-hidden" style={{ background: 'rgba(138,126,114,0.12)' }}>
+          <div className="grid grid-cols-2" style={{ gap: '14px' }}>
             {FEATURES.map((f) => (
-              <div key={f.label} className="p-7 text-center" style={{ background: '#F7F2EA' }}>
-                <div className="text-3xl mb-2">{f.icon}</div>
-                <p style={{ fontSize: '11px', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A7E72', marginBottom: '4px' }}>{f.label}</p>
-                <p style={{ fontSize: '13px', color: '#1C1C1E' }}>{f.desc}</p>
+              <div key={f.label} className="card-hover" style={{ background: 'white', borderRadius: 4, padding: '28px 18px', textAlign: 'center', boxShadow: '0 2px 8px rgba(28,28,30,0.04), 0 8px 24px rgba(28,28,30,0.04)' }}>
+                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" style={{ marginBottom: 14, display: 'inline-block' }} aria-hidden="true">
+                  <path d={f.icon} />
+                </svg>
+                <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#5C1A2E', marginBottom: '5px' }}>{f.label}</p>
+                <p style={{ fontSize: '13px', color: '#8A7E72', lineHeight: 1.45 }}>{f.desc}</p>
               </div>
             ))}
           </div>
