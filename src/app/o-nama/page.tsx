@@ -4,14 +4,14 @@ import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'O nama',
-  description: 'Naša priča — premium privatni venue na Fruškoj Gori.',
+  description: 'Napolitana Lab Vrdnik — radionica napolitanske pice na Fruškoj Gori, u saradnji sa picerijom Majstor i Margarita.',
 };
 
 const VREDNOSTI = [
-  { icon: '🏠', title: 'Privatnost', desc: 'Svaka rezervacija znači da je prostor samo vaš. Niko drugi. Puna sloboda.' },
-  { icon: '🍕', title: 'Autentičnost', desc: 'Naši pizza majstori prave pistu od srca. Nikada gotova smesa, uvek sveže.' },
-  { icon: '🌿', title: 'Priroda', desc: 'Fruška Gora u podnožju, zelenilo i svež vazduh — prirodni ambijent bez kompromisa.' },
-  { icon: '✨', title: 'Pažnja', desc: 'Svaki detalj je promišljen. Od čistoće bazena do načina na koji vas dočekamo.' },
+  { icon: '🍕', title: 'Pravi majstori', desc: 'Obuku vode pizza majstori iz picerije Majstor i Margarita. Znanje iz prve ruke, ne improvizacija.' },
+  { icon: '🔥', title: 'Napolitana', desc: 'Učimo autentičnu tehniku — razvlačenje rukom, pravo testo, pečenje u pravoj peći.' },
+  { icon: '🏊', title: 'Uz bazen', desc: 'Sve se dešava na prelepom imanju s bazenom na Fruškoj Gori. Učenje i uživanje na istom mestu.' },
+  { icon: '🌿', title: 'Priroda', desc: 'Mir, zelenilo i pogled na ravnicu — daleko od gradske gužve, a nadohvat ruke.' },
 ];
 
 export default function ONamaPage() {
@@ -26,9 +26,14 @@ export default function ONamaPage() {
         <div style={{ background: '#F7F2EA', padding: '64px 20px' }}>
           <div style={{ maxWidth: '560px' }}>
             <p className="font-serif" style={{ fontSize: 'clamp(18px, 4vw, 22px)', color: '#1C1C1E', lineHeight: 1.6, marginBottom: '24px' }}>
-              Majstor i Margarita nastao je iz jedne proste ideje: napraviti mesto gde se osetiš kao kod kuće, ali lepo kao u hotelu.
+              Napolitana Lab je radionica prave napolitanske pice na imanju u srcu Fruške Gore, kod Vrdnika.
             </p>
-            <p style={{ fontSize: '15px', color: '#8A7E72', lineHeight: 1.7 }}>Jedva čekamo da vam ugostimo.</p>
+            <p style={{ fontSize: '15px', color: '#8A7E72', lineHeight: 1.7, marginBottom: '20px' }}>
+              Ideja je jednostavna: spojiti vrhunsko znanje o pici sa prelepim prostorom u prirodi. Zato radionice vode pizza majstori iz beogradske picerije <strong style={{ color: '#5C1A2E', fontWeight: 600 }}>Majstor i Margarita</strong> — oni donose veštinu i tradiciju, a mi prostor, bazen i atmosferu.
+            </p>
+            <p style={{ fontSize: '15px', color: '#8A7E72', lineHeight: 1.7 }}>
+              Bilo da želite da naučite zanat, proslavite rođendan ili okupite tim — kod nas pica nije samo jelo, već doživljaj koji se pamti.
+            </p>
           </div>
         </div>
         <div style={{ background: 'white', padding: '64px 20px' }}>
