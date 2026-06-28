@@ -2,7 +2,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 
-export type HeroSlide = { src: string; alt: string };
+export type HeroSlide = { src: string; alt: string; caption?: string; position?: string };
 
 // Fallback — sve fotografije iz galerije (koristi se ako nisu prosleđene spolja)
 const DEFAULT_SLIDES: HeroSlide[] = [
@@ -43,7 +43,7 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
             alt={slide.alt}
             loading={i === 0 ? 'eager' : 'lazy'}
             style={{
-              width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center',
+              width: '100%', height: '100%', objectFit: 'cover', objectPosition: slide.position || 'center',
               transform: i === current ? 'scale(1.12)' : 'scale(1)',
               transition: i === current ? 'transform 9s ease-out' : 'none',
             }}
@@ -86,6 +86,18 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
             </Link>
           </div>
         </div>
+      </div>
+
+      {/* Natpis po slajdu (lična posveta) */}
+      <div
+        className="absolute z-20 pointer-events-none"
+        style={{ bottom: 104, left: 20, right: 24, textAlign: 'right', opacity: SLIDES[current]?.caption ? 1 : 0, transition: 'opacity 1s var(--ease-premium)' }}
+      >
+        {SLIDES[current]?.caption && (
+          <span className="font-display" style={{ fontStyle: 'italic', fontWeight: 500, fontSize: 'clamp(18px, 4vw, 26px)', color: '#E0C878', textShadow: '0 2px 14px rgba(0,0,0,0.55)' }}>
+            „{SLIDES[current].caption}”
+          </span>
+        )}
       </div>
 
       {/* META TRAKA — premium venue činjenice */}

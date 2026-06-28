@@ -59,6 +59,12 @@ export default async function HomePage() {
     }
   } catch { /* koristi fallback */ }
 
+  // Lična posveta — uvek u rotaciji
+  heroSlides = [
+    ...heroSlides,
+    { src: '/images/seka.jpg', alt: 'Moja najlepša seka', caption: 'moja najlepša seka', position: 'center 30%' },
+  ];
+
   return (
     <>
       <Navbar />
