@@ -86,8 +86,8 @@ export default function PackagesSection({ packages }: { packages: Package[] }) {
         </p>
       </div>
 
-      {/* Mobilni: horizontalni scroll · Desktop: grid */}
-      <div className="flex md:grid md:grid-cols-3 md:items-stretch gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-5 px-5 md:mx-0 md:px-0 pb-4 md:pb-0">
+      {/* Mobilni: horizontalni scroll · Desktop: centriran grid (2 programa) */}
+      <div className="flex md:grid md:grid-cols-2 md:max-w-3xl md:mx-auto md:items-stretch gap-5 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory -mx-5 px-5 md:px-0 pb-4 md:pb-0">
         {packages.map((pkg) => (
           <Card key={pkg.id} pkg={pkg} featured={pkg.slug === 'pizza-experience'} />
         ))}

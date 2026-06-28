@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import PackagesSection from '@/components/home/PackagesSection';
 import PizzaSection from '@/components/home/PizzaSection';
+import ProcesSection from '@/components/home/ProcesSection';
 import AwardsSection from '@/components/home/AwardsSection';
 import GalerijaSection from '@/components/home/GalerijaSection';
 import TeamBuildingSection from '@/components/home/TeamBuildingSection';
@@ -90,6 +91,7 @@ export default async function HomePage() {
       </Reveal>
       <Reveal delay={100}><PackagesSection packages={packages} /></Reveal>
       <Reveal delay={50}><PizzaSection /></Reveal>
+      <Reveal delay={50}><ProcesSection /></Reveal>
       <Reveal delay={50}><AwardsSection /></Reveal>
       <Reveal delay={50}><GalerijaSection /></Reveal>
       <Reveal delay={50}><TeamBuildingSection /></Reveal>

@@ -3,6 +3,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import PageHero from '@/components/layout/PageHero';
 import PackagesSection from '@/components/home/PackagesSection';
+import ProcesSection from '@/components/home/ProcesSection';
 import type { Package } from '@/types';
 import type { Metadata } from 'next';
 
@@ -29,6 +30,7 @@ export default async function PaketiPage() {
         image="/images/pool_wide.jpg"
       />
       <PackagesSection packages={packages} />
+      <ProcesSection />
       <Footer />
     </>
   );
