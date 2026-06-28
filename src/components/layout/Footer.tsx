@@ -22,7 +22,7 @@ function Icon({ d, fill = false }: { d: string; fill?: boolean }) {
 
 export default function Footer() {
   return (
-    <footer style={{ background: '#1C1C1E' }}>
+    <footer style={{ background: '#1C1C1E', borderTop: '1px solid rgba(201,168,76,0.25)' }}>
       <div className="max-w-7xl mx-auto px-5 md:px-10 pt-16 pb-10">
         <div className="grid md:grid-cols-12 gap-10 md:gap-8">
           {/* Brend */}
@@ -33,6 +33,9 @@ export default function Footer() {
             <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginTop: 16, maxWidth: 340 }}>
               Radionica napolitanske pice i privatni prostor sa bazenom, skriven u srcu Fruške Gore.
               Uz majstore picerije Majstor i Margarita.
+            </p>
+            <p style={{ fontSize: 12, color: 'rgba(201,168,76,0.85)', letterSpacing: '0.04em', marginTop: 12 }}>
+              ★ 50 Top Pizza — među najboljima u Evropi
             </p>
             <a
               href="https://instagram.com/napolitanalab"

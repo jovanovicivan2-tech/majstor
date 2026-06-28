@@ -16,7 +16,7 @@ export default function PricaSection() {
         <h2 className="font-display mt-6" style={{ fontWeight: 400, fontSize: 'var(--text-d-2xl)', color: '#fff', lineHeight: 1.12, marginBottom: 28 }}>
           Vreme ovde teče sporije
         </h2>
-        <p className="font-display" style={{ fontSize: 'clamp(20px, 3.4vw, 27px)', fontWeight: 300, color: 'rgba(255,255,255,0.82)', lineHeight: 1.55, fontStyle: 'italic' }}>
+        <p className="font-display" style={{ fontSize: 'clamp(20px, 3.4vw, 27px)', fontWeight: 300, color: 'rgba(255,255,255,0.88)', lineHeight: 1.55, fontStyle: 'italic', textShadow: '0 2px 18px rgba(0,0,0,0.4)' }}>
           Na imanju iznad Vrdnika, gde se Fruška Gora spušta u ravnicu, dan se ne meri satima.
           Voda koja svetluca u sumrak, miris lavande, živa vatra peći i pica koja nastaje pod vašim rukama —
           to nije samo obrok, već popodne koje ostaje.

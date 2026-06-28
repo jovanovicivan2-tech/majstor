@@ -27,7 +27,7 @@ export default function AtmosphereQuote({
         {eyebrow && (
           <p className="eyebrow eyebrow--center justify-center" style={{ color: '#C9A84C' }}>{eyebrow}</p>
         )}
-        <p className="font-display mt-6" style={{ fontSize: 'clamp(22px, 3.8vw, 32px)', fontWeight: 300, color: '#fff', lineHeight: 1.45, fontStyle: 'italic' }}>
+        <p className="font-display mt-6" style={{ fontSize: 'clamp(22px, 3.8vw, 32px)', fontWeight: 300, color: '#fff', lineHeight: 1.45, fontStyle: 'italic', textShadow: '0 2px 18px rgba(0,0,0,0.4)' }}>
           „{quote}”
         </p>
         <span className="mt-8" style={{ width: 48, height: 1, background: 'rgba(201,168,76,0.6)' }} />
