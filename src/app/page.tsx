@@ -4,6 +4,8 @@ import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
 import PackagesSection from '@/components/home/PackagesSection';
 import PizzaSection from '@/components/home/PizzaSection';
+import GalerijaSection from '@/components/home/GalerijaSection';
+import TeamBuildingSection from '@/components/home/TeamBuildingSection';
 import LocationSection from '@/components/home/LocationSection';
 import CTASection from '@/components/home/CTASection';
 import StickyCTA from '@/components/home/StickyCTA';
@@ -57,6 +59,8 @@ export default async function HomePage() {
       </Reveal>
       <Reveal delay={100}><PackagesSection packages={packages} /></Reveal>
       <Reveal delay={50}><PizzaSection /></Reveal>
+      <Reveal delay={50}><GalerijaSection /></Reveal>
+      <Reveal delay={50}><TeamBuildingSection /></Reveal>
       <Reveal delay={50}><LocationSection /></Reveal>
       <Reveal delay={50}><CTASection /></Reveal>
       <Footer />
