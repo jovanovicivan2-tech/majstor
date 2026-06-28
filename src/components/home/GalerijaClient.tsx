@@ -2,53 +2,39 @@
 import { useState } from 'react';
 import type { GalleryImage, GalleryCategory } from '@/types';
 
-const CATEGORIES: { key: 'sve' | GalleryCategory; label: string }[] = [
+const CATS: { key: 'sve' | GalleryCategory; label: string }[] = [
   { key: 'sve', label: 'Sve' }, { key: 'bazen', label: '🏊 Bazen' },
-  { key: 'ambijent', label: '🌿 Ambijent' }, { key: 'pizzerija', label: '🍕 Pizza' },
-  { key: 'eventi', label: '🎉 Eventi' },
+  { key: 'ambijent', label: '🌿 Ambijent' }, { key: 'pizzerija', label: '🍕 Pizza' }, { key: 'eventi', label: '🎉 Eventi' },
 ];
 
-export default function GalerijaClient({ images, locale }: { images: GalleryImage[]; locale: string }) {
+export default function GalerijaClient({ images }: { images: GalleryImage[] }) {
   const [active, setActive] = useState<'sve' | GalleryCategory>('sve');
-  const [lightbox, setLightbox] = useState<number | null>(null);
-  const filtered = active === 'sve' ? images : images.filter(img => img.category === active);
-
-  const openLightbox = (idx: number) => { setLightbox(idx); document.body.style.overflow = 'hidden'; };
-  const closeLightbox = () => { setLightbox(null); document.body.style.overflow = ''; };
-  const prev = () => setLightbox(l => l !== null ? (l - 1 + filtered.length) % filtered.length : null);
-  const next = () => setLightbox(l => l !== null ? (l + 1) % filtered.length : null);
-
+  const [lb, setLb] = useState<number | null>(null);
+  const filtered = active === 'sve' ? images : images.filter(i => i.category === active);
+  const close = () => { setLb(null); document.body.style.overflow = ''; };
+  const open = (i: number) => { setLb(i); document.body.style.overflow = 'hidden'; };
   return (
-    <div className="bg-[#F7F2EA] min-h-screen">
-      <div className="px-5 py-6 flex gap-2 overflow-x-auto [-webkit-overflow-scrolling:touch]">
-        {CATEGORIES.map((cat) => (
-          <button key={cat.key} onClick={() => setActive(cat.key)}
-            className={`flex-none px-4 h-9 text-sm font-medium rounded-sm border transition-colors whitespace-nowrap ${active === cat.key ? 'bg-[#5C1A2E] border-[#5C1A2E] text-white' : 'border-[#D5CDC3] text-[#8A7E72] hover:border-[#5C1A2E] hover:text-[#5C1A2E] bg-white'}`}>
-            {cat.label}
-          </button>
-        ))}
+    <div style={{ background: '#F7F2EA', minHeight: '100vh' }}>
+      <div style={{ padding: '24px 20px', display: 'flex', gap: 8, overflowX: 'auto' }}>
+        {CATS.map(c => <button key={c.key} onClick={() => setActive(c.key)} style={{ flexShrink: 0, padding: '0 16px', height: 36, fontSize: 14, fontWeight: 500, borderRadius: 2, border: active === c.key ? 'none' : '1px solid #D5CDC3', background: active === c.key ? '#5C1A2E' : 'white', color: active === c.key ? 'white' : '#8A7E72', cursor: 'pointer', whiteSpace: 'nowrap' }}>{c.label}</button>)}
       </div>
-      <div className="px-5 pb-10 grid grid-cols-2 md:grid-cols-3 gap-2">
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 8, padding: '0 20px 40px' }}>
         {filtered.map((img, idx) => (
-          <button key={img.id} onClick={() => openLightbox(idx)} className="relative aspect-square overflow-hidden rounded-sm bg-[#EDE8E0] group">
+          <button key={img.id} onClick={() => open(idx)} style={{ position: 'relative', aspectRatio: '1', overflow: 'hidden', borderRadius: 2, background: '#EDE8E0', border: 'none', cursor: 'pointer', padding: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={img.url} alt={locale === 'en' ? (img.alt_en || img.alt_sr || '') : (img.alt_sr || '')} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center"><span className="text-white text-2xl opacity-0 group-hover:opacity-100 transition-opacity">🔍</span></div>
+            <img src={img.url} alt={img.alt_sr || ''} style={{ width: '100%', height: '100%', objectFit: 'cover' }} loading="lazy" />
           </button>
         ))}
       </div>
-      {filtered.length === 0 && <div className="text-center py-20 text-[#8A7E72]"><p className="text-4xl mb-3">📷</p><p>Fotografije uskoro...</p></div>}
-      {lightbox !== null && filtered[lightbox] && (
-        <div className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center" onClick={closeLightbox}>
-          <button className="absolute top-4 right-4 text-white/60 hover:text-white text-3xl w-12 h-12 flex items-center justify-center" onClick={closeLightbox} aria-label="Zatvori">×</button>
-          <button onClick={(e) => { e.stopPropagation(); prev(); }} className="absolute left-4 text-white/60 hover:text-white text-3xl w-12 h-12 flex items-center justify-center" aria-label="Prethodna">‹</button>
-          <button onClick={(e) => { e.stopPropagation(); next(); }} className="absolute right-16 text-white/60 hover:text-white text-3xl w-12 h-12 flex items-center justify-center" aria-label="Sledeća">›</button>
-          <div className="max-w-4xl max-h-[85vh] w-full mx-8" onClick={(e) => e.stopPropagation()}>
+      {lb !== null && filtered[lb] && (
+        <div onClick={close} style={{ position: 'fixed', inset: 0, zIndex: 50, background: 'rgba(0,0,0,0.95)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <button onClick={close} style={{ position: 'absolute', top: 16, right: 16, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', fontSize: 32, cursor: 'pointer', width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
+          <button onClick={e => { e.stopPropagation(); setLb(l => l !== null ? (l - 1 + filtered.length) % filtered.length : null); }} style={{ position: 'absolute', left: 16, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', fontSize: 40, cursor: 'pointer', width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>‹</button>
+          <div style={{ maxWidth: '90vw', maxHeight: '85vh' }} onClick={e => e.stopPropagation()}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={filtered[lightbox].url} alt={locale === 'en' ? (filtered[lightbox].alt_en || '') : (filtered[lightbox].alt_sr || '')} className="w-full h-full object-contain max-h-[80vh]" />
-            {filtered[lightbox].alt_sr && <p className="text-center text-white/50 text-sm mt-3">{locale === 'en' ? filtered[lightbox].alt_en : filtered[lightbox].alt_sr}</p>}
+            <img src={filtered[lb].url} alt={filtered[lb].alt_sr || ''} style={{ maxWidth: '100%', maxHeight: '80vh', objectFit: 'contain' }} />
           </div>
-          <div className="absolute bottom-4 text-white/30 text-sm">{lightbox + 1} / {filtered.length}</div>
+          <button onClick={e => { e.stopPropagation(); setLb(l => l !== null ? (l + 1) % filtered.length : null); }} style={{ position: 'absolute', right: 64, background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', fontSize: 40, cursor: 'pointer', width: 48, height: 48, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>›</button>
         </div>
       )}
     </div>

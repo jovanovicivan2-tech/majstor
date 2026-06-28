@@ -4,23 +4,22 @@ const STEPS = [
   { num: '2', title: 'Odabir sastojaka', sub: '15 minuta · Svako bira svoju kombinaciju' },
   { num: '3', title: 'Pečenje & degustacija', sub: 'Uz piće, pored bazena 🍕' },
 ];
-export default function PizzaSection({ locale }: { locale: string }) {
-  const prefix = locale === 'en' ? '/en' : '';
+export default function PizzaSection() {
   return (
-    <section className="bg-[#1C1C1E] px-5 md:px-10 py-16">
-      <div className="max-w-lg">
-        <p className="text-[10px] font-semibold tracking-[0.2em] uppercase text-[#C9A84C] mb-3">Pizza radionica</p>
-        <h2 className="font-serif font-medium text-white leading-tight mb-4" style={{ fontSize: 'clamp(28px, 7vw, 40px)' }}>Postanite pizza<br />majstor za jedan dan</h2>
-        <p className="text-[15px] text-white/65 leading-relaxed mb-8">Naši pizza majstori čuvari su tradicije napolitanske pizze. Naučićete da mesete testo pravom tehnikom — a onda ćete je pojesti pored bazena.</p>
-        <div className="space-y-3 mb-9">
-          {STEPS.map((step) => (
-            <div key={step.num} className="flex items-start gap-4 p-4 bg-white/4 border border-white/7 rounded-sm">
-              <span className="font-serif text-3xl font-normal text-[#C9A84C]/40 leading-none min-w-[32px]">{step.num}</span>
-              <div className="pt-1"><p className="text-sm font-semibold text-white/90 mb-0.5">{step.title}</p><p className="text-xs text-white/45">{step.sub}</p></div>
+    <section style={{ background: '#1C1C1E', padding: '64px 20px' }}>
+      <div style={{ maxWidth: 520 }}>
+        <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: 12 }}>Pizza radionica</p>
+        <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontWeight: 500, fontSize: 'clamp(28px, 7vw, 40px)', color: 'white', lineHeight: 1.15, marginBottom: 16 }}>Postanite pizza<br />majstor za jedan dan</h2>
+        <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, marginBottom: 32 }}>Naši pizza majstori čuvari su tradicije napolitanske pizze. Naučićete da mesete testo pravom tehnikom — a onda ćete je pojesti pored bazena.</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 36 }}>
+          {STEPS.map(s => (
+            <div key={s.num} style={{ display: 'flex', gap: 16, padding: 16, background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)', borderRadius: 2 }}>
+              <span style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: 32, color: 'rgba(201,168,76,0.4)', lineHeight: 1, minWidth: 32 }}>{s.num}</span>
+              <div><p style={{ fontSize: 14, fontWeight: 600, color: 'rgba(255,255,255,0.9)', marginBottom: 2 }}>{s.title}</p><p style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>{s.sub}</p></div>
             </div>
           ))}
         </div>
-        <Link href={`${prefix}/paketi#pizza-experience`} className="inline-flex items-center gap-2 border-[1.5px] border-[#C9A84C]/60 text-[#C9A84C] text-sm font-semibold tracking-wide uppercase px-6 h-12 rounded-sm hover:bg-[#C9A84C]/10 transition-colors">Saznaj više →</Link>
+        <Link href="/paketi" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, border: '1.5px solid rgba(201,168,76,0.6)', color: '#C9A84C', fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', padding: '0 24px', height: 48, borderRadius: 2, textDecoration: 'none' }}>Saznaj više →</Link>
       </div>
     </section>
   );

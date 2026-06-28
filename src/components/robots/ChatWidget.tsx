@@ -1,61 +1,55 @@
 'use client';
 import { useState, useRef, useEffect } from 'react';
-
 interface Message { role: 'user' | 'assistant'; content: string; }
-const QUICK_REPLIES = ['Koji paketi postoje?', 'Koliko košta bazen?', 'Kako do vas?'];
-
-export default function ChatWidget({ locale }: { locale: string }) {
+const QR = ['Koji paketi postoje?', 'Koliko košta?', 'Kako do vas?'];
+export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([{ role: 'assistant', content: 'Zdravo! 👋 Pomažem vam da pronađete savršeni paket. Šta vas zanima?' }]);
+  const [msgs, setMsgs] = useState<Message[]>([{ role: 'assistant', content: 'Zdravo! 👋 Pomažem vam da pronađete savršeni paket. Šta vas zanima?' }]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [sessionCount, setSessionCount] = useState(0);
-  const bottomRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => { if (open) bottomRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [messages, open]);
-
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => { if (open) ref.current?.scrollIntoView({ behavior: 'smooth' }); }, [msgs, open]);
   const send = async (text?: string) => {
-    const content = text || input.trim();
-    if (!content || loading || sessionCount >= 20) return;
-    const userMsg: Message = { role: 'user', content };
-    const newMessages = [...messages, userMsg];
-    setMessages(newMessages); setInput(''); setLoading(true); setSessionCount(c => c + 1);
+    const c = text || input.trim();
+    if (!c || loading || count >= 20) return;
+    const newMsgs = [...msgs, { role: 'user' as const, content: c }];
+    setMsgs(newMsgs); setInput(''); setLoading(true); setCount(n => n + 1);
     try {
-      const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: newMessages, robotType: 'booking' }) });
-      const data = await res.json();
-      setMessages([...newMessages, { role: 'assistant', content: data.reply || 'Greška. Pokušajte ponovo.' }]);
-    } catch { setMessages([...newMessages, { role: 'assistant', content: 'Greška pri konekciji. Pozovite nas direktno.' }]); }
+      const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: newMsgs }) });
+      const d = await r.json();
+      setMsgs([...newMsgs, { role: 'assistant', content: d.reply || 'Greška.' }]);
+    } catch { setMsgs([...newMsgs, { role: 'assistant', content: 'Pozovite nas direktno.' }]); }
     setLoading(false);
   };
-
   return (
     <>
-      <button onClick={() => setOpen(!open)} className={`fixed bottom-20 right-5 z-40 w-14 h-14 rounded-full shadow-lg flex items-center justify-center transition-all duration-300 ${open ? 'bg-[#8A7E72]' : 'bg-[#5C1A2E] hover:bg-[#7A2440]'}`} aria-label={open ? 'Zatvori chat' : 'Otvori chat'}>
-        <span className="text-xl">{open ? '×' : '💬'}</span>
+      <button onClick={() => setOpen(!open)} aria-label="Chat" style={{ position: 'fixed', bottom: 80, right: 20, zIndex: 40, width: 56, height: 56, borderRadius: '50%', border: 'none', cursor: 'pointer', fontSize: 22, background: open ? '#8A7E72' : '#5C1A2E', color: 'white', boxShadow: '0 4px 20px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        {open ? '×' : '💬'}
       </button>
       {open && (
-        <div className="fixed bottom-40 right-4 z-40 w-[calc(100vw-32px)] max-w-[360px] bg-white border border-[#EDE8E0] rounded-sm shadow-2xl flex flex-col overflow-hidden" style={{ maxHeight: '480px' }}>
-          <div className="bg-[#5C1A2E] px-4 py-3 flex items-center justify-between flex-shrink-0">
-            <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-[#C9A84C] animate-pulse" /><span className="font-semibold text-white text-sm">Majstor i Margarita</span></div>
-            <button onClick={() => setOpen(false)} className="text-white/60 hover:text-white text-xl w-8 h-8 flex items-center justify-center">×</button>
+        <div style={{ position: 'fixed', bottom: 152, right: 16, zIndex: 40, width: 'calc(100vw - 32px)', maxWidth: 360, background: 'white', border: '1px solid #EDE8E0', borderRadius: 4, boxShadow: '0 20px 60px rgba(0,0,0,0.15)', display: 'flex', flexDirection: 'column', maxHeight: 480 }}>
+          <div style={{ background: '#5C1A2E', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexShrink: 0 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}><div style={{ width: 8, height: 8, borderRadius: '50%', background: '#C9A84C', animation: 'pulse 2s infinite' }} /><span style={{ color: 'white', fontWeight: 600, fontSize: 14 }}>Majstor i Margarita</span></div>
+            <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.6)', cursor: 'pointer', fontSize: 20, width: 32, height: 32, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>×</button>
           </div>
-          <div className="flex-1 overflow-y-auto p-4 space-y-3 bg-[#F7F2EA]">
-            {messages.map((msg, i) => (
-              <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
-                <div className={`max-w-[82%] px-3 py-2 rounded-sm text-sm leading-relaxed ${msg.role === 'user' ? 'bg-[#5C1A2E] text-white' : 'bg-white text-[#1C1C1E] border border-[#EDE8E0]'}`}>{msg.content}</div>
+          <div style={{ flex: 1, overflowY: 'auto', padding: 16, background: '#F7F2EA', display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {msgs.map((m, i) => (
+              <div key={i} style={{ display: 'flex', justifyContent: m.role === 'user' ? 'flex-end' : 'flex-start' }}>
+                <div style={{ maxWidth: '82%', padding: '8px 12px', borderRadius: 2, fontSize: 14, lineHeight: 1.5, background: m.role === 'user' ? '#5C1A2E' : 'white', color: m.role === 'user' ? 'white' : '#1C1C1E', border: m.role === 'user' ? 'none' : '1px solid #EDE8E0' }}>{m.content}</div>
               </div>
             ))}
-            {loading && <div className="flex justify-start"><div className="bg-white border border-[#EDE8E0] px-3 py-2 rounded-sm text-sm text-[#8A7E72] flex gap-1"><span className="animate-bounce" style={{ animationDelay: '0ms' }}>·</span><span className="animate-bounce" style={{ animationDelay: '150ms' }}>·</span><span className="animate-bounce" style={{ animationDelay: '300ms' }}>·</span></div></div>}
-            <div ref={bottomRef} />
+            {loading && <div style={{ display: 'flex', justifyContent: 'flex-start' }}><div style={{ padding: '8px 12px', background: 'white', border: '1px solid #EDE8E0', borderRadius: 2, display: 'flex', gap: 4 }}>{'···'}</div></div>}
+            <div ref={ref} />
           </div>
-          {messages.length <= 2 && (
-            <div className="px-3 py-2 flex gap-2 overflow-x-auto flex-shrink-0 bg-white border-t border-[#EDE8E0]">
-              {QUICK_REPLIES.map(q => <button key={q} onClick={() => send(q)} className="flex-none text-xs px-3 h-8 border border-[#5C1A2E]/30 text-[#5C1A2E] rounded-sm hover:bg-[#5C1A2E]/8 transition-colors whitespace-nowrap">{q}</button>)}
+          {msgs.length <= 2 && (
+            <div style={{ padding: '8px 12px', display: 'flex', gap: 8, overflowX: 'auto', background: 'white', borderTop: '1px solid #EDE8E0', flexShrink: 0 }}>
+              {QR.map(q => <button key={q} onClick={() => send(q)} style={{ flexShrink: 0, fontSize: 12, padding: '0 12px', height: 32, border: '1px solid rgba(92,26,46,0.3)', color: '#5C1A2E', background: 'transparent', borderRadius: 2, cursor: 'pointer', whiteSpace: 'nowrap' }}>{q}</button>)}
             </div>
           )}
-          <div className="p-3 border-t border-[#EDE8E0] flex gap-2 bg-white flex-shrink-0">
-            <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && !e.shiftKey && send()} placeholder={sessionCount >= 20 ? 'Limit dostignut — pozovite nas' : 'Unesite pitanje...'} disabled={sessionCount >= 20} className="flex-1 h-10 px-3 border border-[#D5CDC3] rounded-sm text-sm text-[#1C1C1E] placeholder:text-[#8A7E72]/50 focus:outline-none focus:border-[#5C1A2E] disabled:bg-[#F7F2EA]" />
-            <button onClick={() => send()} disabled={!input.trim() || loading || sessionCount >= 20} className="w-10 h-10 bg-[#5C1A2E] text-white rounded-sm flex items-center justify-center disabled:opacity-40 hover:bg-[#7A2440] transition-colors flex-shrink-0">→</button>
+          <div style={{ padding: 12, borderTop: '1px solid #EDE8E0', display: 'flex', gap: 8, background: 'white', flexShrink: 0 }}>
+            <input value={input} onChange={e => setInput(e.target.value)} onKeyDown={e => e.key === 'Enter' && send()} placeholder="Unesite pitanje..." style={{ flex: 1, height: 40, padding: '0 12px', border: '1px solid #D5CDC3', borderRadius: 2, fontSize: 14, outline: 'none' }} />
+            <button onClick={() => send()} disabled={!input.trim() || loading} style={{ width: 40, height: 40, background: '#5C1A2E', color: 'white', border: 'none', borderRadius: 2, cursor: 'pointer', fontSize: 18, opacity: (!input.trim() || loading) ? 0.4 : 1, flexShrink: 0 }}>→</button>
           </div>
         </div>
       )}
