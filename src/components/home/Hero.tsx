@@ -77,11 +77,11 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
             Vode ih majstori picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
           </p>
 
-          <div className="flex flex-wrap items-center" style={{ gap: 14 }}>
-            <Link href="/rezervacija" className="btn btn-primary">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+            <Link href="/rezervacija" className="btn btn-primary w-full sm:w-auto">
               Rezervišite termin →
             </Link>
-            <Link href="/paketi" className="btn btn-ghost">
+            <Link href="/paketi" className="btn btn-ghost w-full sm:w-auto">
               Pogledajte programe
             </Link>
           </div>

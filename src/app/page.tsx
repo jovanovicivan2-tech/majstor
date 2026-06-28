@@ -8,6 +8,7 @@ import AwardsSection from '@/components/home/AwardsSection';
 import GalerijaSection from '@/components/home/GalerijaSection';
 import TeamBuildingSection from '@/components/home/TeamBuildingSection';
 import LocationSection from '@/components/home/LocationSection';
+import FAQSection from '@/components/home/FAQSection';
 import CTASection from '@/components/home/CTASection';
 import StickyCTA from '@/components/home/StickyCTA';
 import ChatWidget from '@/components/robots/ChatWidget';
@@ -93,6 +94,7 @@ export default async function HomePage() {
       <Reveal delay={50}><GalerijaSection /></Reveal>
       <Reveal delay={50}><TeamBuildingSection /></Reveal>
       <Reveal delay={50}><LocationSection /></Reveal>
+      <Reveal delay={50}><FAQSection /></Reveal>
       <Reveal delay={50}><CTASection /></Reveal>
       <Footer />
       <StickyCTA />
