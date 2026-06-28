@@ -6,15 +6,19 @@ import { createClient } from '@/lib/supabase/server';
 import type { GalleryImage } from '@/types';
 
 export const metadata: Metadata = {
-  title: 'Galerija',
+  title: 'Galerija | Majstor i Margarita — Privatni venue Vrdnik',
   description: 'Pogledajte fotografije privatnog prostora sa bazenom, pizza radionice i ambijenta na Fruškoj Gori.',
 };
 
 const FALLBACK: GalleryImage[] = [
-  { id: '1', category: 'bazen', url: '/images/hero-pool.jpg', alt_sr: 'Privatni bazen u sumrak', alt_en: null, is_featured: true, sort_order: 1, created_at: '' },
-  { id: '2', category: 'ambijent', url: '/images/hero-terrace.jpg', alt_sr: 'Terasa sa pogledom na Vojvodinu', alt_en: null, is_featured: true, sort_order: 2, created_at: '' },
-  { id: '3', category: 'ambijent', url: '/images/hero-garden.jpg', alt_sr: 'Bašta Fruške Gore', alt_en: null, is_featured: false, sort_order: 3, created_at: '' },
-  { id: '4', category: 'ambijent', url: '/images/hero-lavender.jpg', alt_sr: 'Lavanda u sumrak', alt_en: null, is_featured: true, sort_order: 4, created_at: '' },
+  { id: '1', category: 'bazen', url: '/images/pool_dusk.jpg', alt_sr: 'Privatni bazen u sumrak — Majstor i Margarita', alt_en: 'Private pool at dusk', is_featured: true, sort_order: 1, created_at: '' },
+  { id: '2', category: 'bazen', url: '/images/pool_wide.jpg', alt_sr: 'Pogled na bazen i modernu vilu na Fruškoj Gori', alt_en: 'Pool and modern villa', is_featured: true, sort_order: 2, created_at: '' },
+  { id: '3', category: 'bazen', url: '/images/pool_person.jpg', alt_sr: 'Opuštanje u kristalno čistom bazenu', alt_en: 'Relaxing in the pool', is_featured: true, sort_order: 3, created_at: '' },
+  { id: '4', category: 'ambijent', url: '/images/terrace_sunset.jpg', alt_sr: 'Terasa sa panoramskim pogledom na Vojvodinu', alt_en: 'Terrace with panoramic view', is_featured: true, sort_order: 4, created_at: '' },
+  { id: '5', category: 'ambijent', url: '/images/garden_view.jpg', alt_sr: 'Uređena bašta sa terasom i panoramom Fruškogorske ravnice', alt_en: 'Garden with terrace', is_featured: false, sort_order: 5, created_at: '' },
+  { id: '6', category: 'ambijent', url: '/images/garden2.jpg', alt_sr: 'Mediteranska bašta sa aromatičnim biljem i šljunkom', alt_en: 'Mediterranean garden', is_featured: false, sort_order: 6, created_at: '' },
+  { id: '7', category: 'ambijent', url: '/images/lavender.jpg', alt_sr: 'Lavanda u cvatu — mirisi Provence na Fruškoj Gori', alt_en: 'Lavender in bloom', is_featured: true, sort_order: 7, created_at: '' },
+  { id: '8', category: 'ambijent', url: '/images/interior_lavender.jpg', alt_sr: 'Enterijer sa lavandom i pogledom na bazen kroz staklene zidove', alt_en: 'Interior with lavender', is_featured: false, sort_order: 8, created_at: '' },
 ];
 
 export default async function GalerijaPage() {
@@ -28,8 +32,10 @@ export default async function GalerijaPage() {
     <>
       <Navbar />
       <div className="pt-16">
-        <div style={{ background: '#1C1C1E', height: '192px', display: 'flex', alignItems: 'flex-end', padding: '0 20px 32px' }}>
-          <div>
+        <div style={{ background: '#1C1C1E', height: '192px', display: 'flex', alignItems: 'flex-end', padding: '0 20px 32px', position: 'relative', overflow: 'hidden' }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/images/pool_dusk.jpg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
+          <div style={{ position: 'relative', zIndex: 1 }}>
             <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: '8px' }}>Galerija</p>
             <h1 className="font-serif" style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 48px)', fontWeight: 500 }}>Pogledajte prostor</h1>
           </div>
