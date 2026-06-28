@@ -34,7 +34,7 @@ body{font-family:Inter,sans-serif;background:#F7F2EA;margin:0;padding:20px}
 <p style="color:#1C1C1E;font-size:15px">Poštovani ${data.guest_name},</p>
 <p style="color:#8A7E72;font-size:14px;line-height:1.6">Vaša rezervacija je potvrđena! Jedva čekamo da vas ugostimo.</p>
 <div class="row"><span class="label">📅 Datum</span><span class="value">${dateFormatted}</span></div>
-<div class="row"><span class="label">🎁 Paket</span><span class="value">${data.package_name}</span></div>
+<div class="row"><span class="label">🎁 Program</span><span class="value">${data.package_name}</span></div>
 <div class="row"><span class="label">👥 Gosti</span><span class="value">${data.num_guests} osoba</span></div>
 ${data.addons.length > 0 ? `<div class="row"><span class="label">✨ Dodaci</span><span class="value">${data.addons.join(', ')}</span></div>` : ''}
 <div class="price-box">
@@ -44,7 +44,7 @@ ${data.addons.length > 0 ? `<div class="row"><span class="label">✨ Dodaci</spa
 </div>
 <p style="font-size:13px;color:#8A7E72">📍 Vrdnik, Fruška Gora<br>📞 +381 XX XXX XXXX</p>
 </div>
-<div class="footer">Majstor i Margarita · Vrdnik, Fruška Gora</div>
+<div class="footer">Napolitana Lab Vrdnik · Fruška Gora<br>U saradnji sa picerijom Majstor i Margarita</div>
 </div></body></html>`,
   };
 }
