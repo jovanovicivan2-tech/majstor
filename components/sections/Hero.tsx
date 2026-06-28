@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Pozadinska slika */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/hero-pool.jpg"
+          src="/images/hero-pool.webp"
           alt="Privatni bazen Majstor i Margarita — Vrdnik, Fruška Gora"
           fill
           priority
