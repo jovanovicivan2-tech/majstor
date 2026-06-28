@@ -3,7 +3,7 @@ import Link from 'next/link';
 const STEPS = [
   { num: '1', title: 'Priprema testa', sub: '30 minuta · Tajne pravog mešenja' },
   { num: '2', title: 'Razvlačenje i filovanje', sub: 'Naučite tehniku pravih majstora' },
-  { num: '3', title: 'Pečenje & degustacija', sub: 'Uz piće, pored bazena 🍕' },
+  { num: '3', title: 'Pečenje & degustacija', sub: 'Uz piće, pored bazena' },
 ];
 
 export default function PizzaSection() {
