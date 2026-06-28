@@ -11,7 +11,7 @@ export default function Footer() {
           <Link key={href} href={href} style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'none', fontSize: 14 }}>{label}</Link>
         ))}
       </div>
-      <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 24 }}>📞 +381 XX XXX XXXX · 📧 info@napolitanalab.rs · 📸 @napolitanalab</p>
+      <p style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)', marginTop: 24 }}>📞 065 387 7777 · 📧 jovanovicivan2@gmail.com · 📸 @napolitanalab</p>
       <p style={{ fontSize: 11, color: 'rgba(255,255,255,0.2)', marginTop: 16 }}>© {new Date().getFullYear()} Napolitana Lab Vrdnik</p>
     </footer>
   );
