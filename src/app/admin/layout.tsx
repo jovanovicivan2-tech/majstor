@@ -1,12 +1,6 @@
-import type { Metadata } from 'next';
 import '../globals.css';
 
-export const metadata: Metadata = {
-  title: { default: 'Admin | Majstor i Margarita', template: '%s | Admin M&M' },
-  robots: 'noindex, nofollow',
-};
-
-export default async function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sr">
       <head>
