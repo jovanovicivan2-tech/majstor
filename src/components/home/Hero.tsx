@@ -56,63 +56,48 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
       <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(28,28,30,0.55) 0%, transparent 55%)' }} />
       <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: 'inset 0 0 200px rgba(0,0,0,0.4)' }} />
 
-      {/* SADRŽAJ */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-start md:justify-center" style={{ paddingTop: 110, paddingBottom: 88 }}>
-        <div className="max-w-2xl">
-          <p className="eyebrow mb-6 enter-up" style={{ color: '#C9A84C', animationDelay: '0.05s' }}>
-            Radionica napolitanske pice
-          </p>
+      {/* CSS za meta traku (desktop) */}
+      <style>{`
+        .hero-meta { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(201,168,76,0.3); }
+        .hero-meta__cell { padding: 16px 0 16px 20px; border-left: 1px solid rgba(255,255,255,0.12); }
+        .hero-meta__cell:nth-child(4n+1) { border-left: none; padding-left: 0; }
+      `}</style>
 
-          <h1
-            className="font-display enter-up"
-            style={{ fontWeight: 500, fontSize: 'var(--text-hero)', lineHeight: 0.98, letterSpacing: '-0.02em', color: '#fff', marginBottom: 24, animationDelay: '0.15s' }}
-          >
-            Umeće prave
-            <br />
-            <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#E0C878' }}>napolitanske</em> pice
-          </h1>
+      {/* SADRŽAJ + META u koloni — garantovano bez preklapanja */}
+      <div className="relative z-10 h-full flex flex-col">
+        <div className="flex-1 flex flex-col justify-center max-w-7xl w-full mx-auto px-5 md:px-10" style={{ paddingTop: 104, paddingBottom: 24 }}>
+          <div className="max-w-2xl">
+            <p className="eyebrow mb-6 enter-up" style={{ color: '#C9A84C', animationDelay: '0.05s' }}>
+              Radionica napolitanske pice
+            </p>
 
-          <p className="enter-up" style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 460, animationDelay: '0.3s' }}>
-            Radionice, proslave i team building — uz živu vatru i mir bazena na Fruškoj Gori.
-            Vode ih majstori picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
-          </p>
+            <h1
+              className="font-display enter-up"
+              style={{ fontWeight: 500, fontSize: 'var(--text-hero)', lineHeight: 0.98, letterSpacing: '-0.02em', color: '#fff', marginBottom: 24, animationDelay: '0.15s' }}
+            >
+              Umeće prave
+              <br />
+              <em style={{ fontStyle: 'italic', fontWeight: 500, color: '#E0C878' }}>napolitanske</em> pice
+            </h1>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3 enter-up" style={{ animationDelay: '0.45s' }}>
-            <Link href="/rezervacija" className="btn btn-primary w-full sm:w-auto">
-              Rezervišite termin →
-            </Link>
-            <Link href="/paketi" className="btn btn-ghost w-full sm:w-auto">
-              Pogledajte programe
-            </Link>
+            <p className="enter-up" style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 460, animationDelay: '0.3s' }}>
+              Radionice, proslave i team building — uz živu vatru i mir bazena na Fruškoj Gori.
+              Vode ih majstori picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 enter-up" style={{ animationDelay: '0.45s' }}>
+              <Link href="/rezervacija" className="btn btn-primary w-full sm:w-auto">
+                Rezervišite termin →
+              </Link>
+              <Link href="/paketi" className="btn btn-ghost w-full sm:w-auto">
+                Pogledajte programe
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Natpis po slajdu (lična posveta) */}
-      <div
-        className="absolute z-20 pointer-events-none"
-        style={{ bottom: 104, left: 20, right: 24, textAlign: 'right', opacity: SLIDES[current]?.caption ? 1 : 0, transition: 'opacity 1s var(--ease-premium)' }}
-      >
-        {SLIDES[current]?.caption && (
-          <span className="font-display" style={{ fontStyle: 'italic', fontWeight: 500, fontSize: 'clamp(18px, 4vw, 26px)', color: '#E0C878', textShadow: '0 2px 14px rgba(0,0,0,0.55)' }}>
-            „{SLIDES[current].caption}”
-          </span>
-        )}
-      </div>
-
-      {/* META TRAKA — premium venue činjenice */}
-      <style>{`
-        .hero-meta { display: grid; grid-template-columns: repeat(2, 1fr); border-top: 1px solid rgba(201,168,76,0.3); }
-        .hero-meta__cell { padding: 18px 0 18px 18px; border-left: 1px solid rgba(255,255,255,0.1); }
-        .hero-meta__cell:nth-child(2n+1) { border-left: none; padding-left: 0; }
-        @media (min-width: 768px) {
-          .hero-meta { grid-template-columns: repeat(4, 1fr); }
-          .hero-meta__cell:nth-child(2n+1) { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 20px; }
-          .hero-meta__cell:nth-child(4n+1) { border-left: none; padding-left: 0; }
-        }
-      `}</style>
-      <div className="absolute z-10 inset-x-0 hidden md:block" style={{ bottom: 0 }}>
-        <div className="max-w-7xl mx-auto px-5 md:px-10">
+        {/* META TRAKA — u toku na dnu (samo desktop) */}
+        <div className="hidden md:block max-w-7xl w-full mx-auto px-5 md:px-10" style={{ paddingBottom: 12 }}>
           <div className="hero-meta">
             {META.map((m) => (
               <div key={m.label} className="hero-meta__cell">
@@ -122,6 +107,18 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Natpis po slajdu (lična posveta) */}
+      <div
+        className="absolute z-20 pointer-events-none"
+        style={{ bottom: 120, left: 20, right: 24, textAlign: 'right', opacity: SLIDES[current]?.caption ? 1 : 0, transition: 'opacity 1s var(--ease-premium)' }}
+      >
+        {SLIDES[current]?.caption && (
+          <span className="font-display" style={{ fontStyle: 'italic', fontWeight: 500, fontSize: 'clamp(18px, 4vw, 26px)', color: '#E0C878', textShadow: '0 2px 14px rgba(0,0,0,0.55)' }}>
+            „{SLIDES[current].caption}”
+          </span>
+        )}
       </div>
 
       {/* SLIDE INDIKATORI */}
