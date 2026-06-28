@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 const venueSchema = {
   "@context": "https://schema.org", "@type": "EventVenue",
-  name: "Napolitana Lab Vrdnik", url: APP_URL, telephone: "+381XXXXXXXXX",
+  name: "Napolitana Lab Vrdnik", url: APP_URL, telephone: "+381653877777",
   description: "Radionica napolitanske pice i privatni prostor sa bazenom na Fruškoj Gori.",
   address: { "@type": "PostalAddress", addressLocality: "Vrdnik", addressRegion: "Vojvodina", postalCode: "22406", addressCountry: "RS" },
   geo: { "@type": "GeoCoordinates", latitude: "45.1234", longitude: "19.7890" },
