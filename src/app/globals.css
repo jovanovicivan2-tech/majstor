@@ -1,42 +1,20 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #F7F2EA;
-  --color-wine: #5C1A2E;
-  --color-wine-light: #7A2440;
-  --color-gold: #C9A84C;
-  --color-charcoal: #1C1C1E;
-  --color-stone: #8A7E72;
-  --color-mist: #EDE8E0;
-  --color-success: #2D6A4F;
-  --color-error: #C1121F;
+  --color-cream: #F7F2EA; --color-wine: #5C1A2E; --color-gold: #C9A84C;
+  --color-charcoal: #1C1C1E; --color-stone: #8A7E72; --color-mist: #EDE8E0;
 }
 
 * { box-sizing: border-box; }
-
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  background-color: var(--color-cream);
-  color: var(--color-charcoal);
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
+body { overflow-x: hidden; line-height: 1.6; }
 input, select, textarea { font-size: 16px !important; }
-
-button, a, [role="button"] { min-height: 44px; min-width: 44px; }
 
 .divider-gold {
   display: flex; align-items: center; gap: 16px; margin: 40px 0;
 }
 .divider-gold::before, .divider-gold::after {
-  content: ''; flex: 1; height: 1px; background: var(--color-gold); opacity: 0.4;
+  content: ''; flex: 1; height: 1px; background: #C9A84C; opacity: 0.4;
 }
-
-:focus-visible { outline: 2px solid var(--color-wine); outline-offset: 2px; }
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-}
+:focus-visible { outline: 2px solid #5C1A2E; outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
