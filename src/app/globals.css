@@ -3,18 +3,65 @@
 :root {
   --color-cream: #F7F2EA; --color-wine: #5C1A2E; --color-gold: #C9A84C;
   --color-charcoal: #1C1C1E; --color-stone: #8A7E72; --color-mist: #EDE8E0;
+  --shadow-soft: 0 2px 8px rgba(28,28,30,0.04), 0 8px 24px rgba(28,28,30,0.05);
+  --shadow-lift: 0 4px 12px rgba(28,28,30,0.06), 0 16px 48px rgba(92,26,46,0.08);
+  --ease-premium: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-body { overflow-x: hidden; line-height: 1.6; }
+body {
+  overflow-x: hidden; line-height: 1.6;
+  background: #F7F2EA; color: #1C1C1E;
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+}
 input, select, textarea { font-size: 16px !important; }
 
+/* Naslovi — fina optika */
+h1, h2, h3 { font-feature-settings: "kern" 1, "liga" 1, "dlig" 1; text-wrap: balance; }
+
+/* Zlatni separator sa ornamentom */
 .divider-gold {
   display: flex; align-items: center; gap: 16px; margin: 40px 0;
 }
 .divider-gold::before, .divider-gold::after {
-  content: ''; flex: 1; height: 1px; background: #C9A84C; opacity: 0.4;
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, #C9A84C 50%, transparent);
+  opacity: 0.55;
 }
+
+/* Premium senke kao klase */
+.shadow-soft { box-shadow: var(--shadow-soft); }
+.shadow-lift { box-shadow: var(--shadow-lift); }
+
+/* Hover lift na karticama (samo gde se doda klasa) */
+.card-hover { transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium); }
+@media (hover: hover) {
+  .card-hover:hover { transform: translateY(-6px); box-shadow: var(--shadow-lift); }
+}
+
+/* Suptilni shimmer za gold tekst akcente */
+.gold-accent { color: #C9A84C; }
+
+/* Fini underline animacija za linkove */
+.link-underline { position: relative; }
+.link-underline::after {
+  content: ''; position: absolute; left: 0; bottom: -2px; width: 100%; height: 1px;
+  background: currentColor; transform: scaleX(0); transform-origin: right;
+  transition: transform 0.4s var(--ease-premium);
+}
+@media (hover: hover) { .link-underline:hover::after { transform: scaleX(1); transform-origin: left; } }
+
+/* Glatak reveal sa blur-om */
+.reveal-init { opacity: 0; transform: translateY(28px); filter: blur(8px); }
+.reveal-in { opacity: 1; transform: translateY(0); filter: blur(0); }
+.reveal-base { transition: opacity 0.9s var(--ease-premium), transform 0.9s var(--ease-premium), filter 0.9s var(--ease-premium); }
+
 :focus-visible { outline: 2px solid #5C1A2E; outline-offset: 2px; }
-@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
+::selection { background: rgba(201,168,76,0.3); color: #1C1C1E; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .reveal-init { opacity: 1; transform: none; filter: none; }
+}
