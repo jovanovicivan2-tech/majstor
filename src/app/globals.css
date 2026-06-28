@@ -138,20 +138,8 @@ body::after {
   transition: transform 0.3s var(--ease-premium), box-shadow 0.3s var(--ease-premium), background 0.3s, color 0.3s;
   position: relative; overflow: hidden;
 }
-/* Suptilan 'sheen' sweep preko dugmeta na hover */
-.btn::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(120deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%);
-  transform: translateX(-130%);
-  transition: transform 0.7s var(--ease-premium);
-  pointer-events: none;
-}
-@media (hover: hover) { .btn:hover::before { transform: translateX(130%); } }
-
-.btn-primary { background: var(--color-wine); color: #fff; box-shadow: var(--shadow-wine); }
-@media (hover: hover) { .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(92,26,46,0.45); } }
+.btn-primary { background: var(--color-wine); color: #fff; box-shadow: 0 4px 16px rgba(92,26,46,0.16); }
+@media (hover: hover) { .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 24px rgba(92,26,46,0.22); } }
 .btn-ghost { background: transparent; color: var(--color-cream); border: 1px solid rgba(247,242,234,0.35); }
 @media (hover: hover) { .btn-ghost:hover { background: rgba(247,242,234,0.1); border-color: rgba(247,242,234,0.6); } }
 .btn-outline { background: transparent; color: var(--color-wine); border: 1.5px solid var(--color-wine); }
