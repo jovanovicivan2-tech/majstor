@@ -23,10 +23,10 @@ export default function KontaktPage() {
           <div style={{ maxWidth: '480px' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '40px' }}>
               <a href="tel:+381653877777" style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', background: 'white', borderRadius: '2px', border: '1px solid #EDE8E0', textDecoration: 'none', minHeight: '64px' }}>
-                <span style={{ fontSize: '24px' }}>📞</span><div><p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72' }}>Telefon</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>065 387 7777</p></div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5C1A2E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" /></svg><div><p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72' }}>Telefon</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>065 387 7777</p></div>
               </a>
               <a href="mailto:jovanovicivan2@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px', background: 'white', borderRadius: '2px', border: '1px solid #EDE8E0', textDecoration: 'none', minHeight: '64px' }}>
-                <span style={{ fontSize: '24px' }}>📧</span><div><p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72' }}>Email</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>jovanovicivan2@gmail.com</p></div>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#5C1A2E" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6" /></svg><div><p style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: '#8A7E72' }}>Email</p><p style={{ fontWeight: 500, color: '#1C1C1E' }}>jovanovicivan2@gmail.com</p></div>
               </a>
             </div>
             <div className="divider-gold" style={{ marginBottom: '32px' }}><span style={{ color: '#C9A84C' }}>✦</span></div>
