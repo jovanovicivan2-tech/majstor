@@ -4,7 +4,6 @@ const INFO = [
   { icon: '🚗', label: 'Od Beograda', value: '80 minuta' },
   { icon: '🅿️', label: 'Parking', value: 'Besplatan, na imanju' },
 ];
-
 export default function LocationSection() {
   return (
     <section className="bg-[#EDE8E0] px-5 md:px-10 py-16">
@@ -15,10 +14,7 @@ export default function LocationSection() {
           {INFO.map((item) => (
             <div key={item.label} className="flex items-center gap-4 p-4 bg-white rounded-sm">
               <span className="text-xl w-10 text-center flex-shrink-0">{item.icon}</span>
-              <div>
-                <p className="text-[11px] uppercase tracking-[0.1em] text-[#8A7E72] mb-0.5">{item.label}</p>
-                <p className="text-[15px] font-medium text-[#1C1C1E]">{item.value}</p>
-              </div>
+              <div><p className="text-[11px] uppercase tracking-[0.1em] text-[#8A7E72] mb-0.5">{item.label}</p><p className="text-[15px] font-medium text-[#1C1C1E]">{item.value}</p></div>
             </div>
           ))}
         </div>
