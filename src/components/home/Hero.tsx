@@ -39,7 +39,7 @@ export default function Hero() {
           <span style={{ display:'inline-block', width:'32px', height:'1px', background:'rgba(201,168,76,0.7)' }} />
           Napolitana Lab · Vrdnik
         </p>
-        <h1 style={{ fontFamily:'Cormorant Garamond, Georgia, serif', fontWeight:500, fontSize:'clamp(40px, 10vw, 78px)', lineHeight:1.04, color:'white', marginBottom:'20px' }}>
+        <h1 style={{ fontFamily:'Cormorant Garamond, Georgia, serif', fontWeight:500, fontSize:'clamp(42px, 10.5vw, 80px)', lineHeight:1.0, letterSpacing:'-0.015em', color:'white', marginBottom:'22px' }}>
           Naučite pravu<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.85)' }}>napolitansku picu</em>
         </h1>
         <p style={{ fontSize:'16px', fontWeight:300, color:'rgba(255,255,255,0.72)', lineHeight:1.65, marginBottom:'36px', maxWidth:'340px' }}>
@@ -48,6 +48,10 @@ export default function Hero() {
         <Link href="/rezervacija" style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#5C1A2E', color:'white', fontSize:'13px', fontWeight:700, letterSpacing:'0.07em', textTransform:'uppercase', padding:'0 32px', height:'52px', borderRadius:'2px', textDecoration:'none' }}>
           Rezervišite termin →
         </Link>
+      </div>
+      <div style={{ position:'absolute', bottom:'28px', left:'50%', transform:'translateX(-50%)', zIndex:10, display:'flex', flexDirection:'column', alignItems:'center', gap:'8px', opacity:0.6 }} aria-hidden="true">
+        <span style={{ fontSize:'9px', letterSpacing:'0.2em', textTransform:'uppercase', color:'rgba(255,255,255,0.7)' }}>Skrolujte</span>
+        <span style={{ width:'1px', height:'32px', background:'linear-gradient(to bottom, rgba(201,168,76,0.8), transparent)' }} />
       </div>
     </section>
   );
