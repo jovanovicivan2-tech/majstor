@@ -53,9 +53,9 @@ export default function TeamBuildingPage() {
       <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: 10 }}>Kontakt</p>
       <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontWeight: 500, fontSize: 'clamp(24px, 5vw, 36px)', color: '#1C1C1E', marginBottom: 12 }}>Pošaljite upit za ponudu</h2>
       <p style={{ fontSize: 15, color: '#8A7E72', lineHeight: 1.6, marginBottom: 32 }}>Javite nam broj učesnika i željeni datum — u roku od 24h šaljemo personalizovanu ponudu.</p>
-      <a href="tel:+381XXXXXXXX" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, background: 'white', borderRadius: 2, border: '1px solid #EDE8E0', textDecoration: 'none', marginBottom: 12 }}>
+      <a href="tel:+381653877777" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: 16, background: 'white', borderRadius: 2, border: '1px solid #EDE8E0', textDecoration: 'none', marginBottom: 12 }}>
         <span style={{ fontSize: 22 }}>📞</span>
-        <div><p style={{ fontSize: 11, textTransform: 'uppercase', color: '#8A7E72' }}>Pozovite odmah</p><p style={{ fontSize: 15, fontWeight: 500, color: '#1C1C1E' }}>+381 XX XXX XXXX</p></div>
+        <div><p style={{ fontSize: 11, textTransform: 'uppercase', color: '#8A7E72' }}>Pozovite odmah</p><p style={{ fontSize: 15, fontWeight: 500, color: '#1C1C1E' }}>065 387 7777</p></div>
       </a>
       <Link href="/kontakt" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#5C1A2E', color: 'white', fontSize: 13, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0 32px', height: 48, borderRadius: 2, textDecoration: 'none', marginTop: 16 }}>Pošalji upit →</Link>
     </div>
