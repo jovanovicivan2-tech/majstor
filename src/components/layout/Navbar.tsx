@@ -68,7 +68,7 @@ export default function Navbar() {
           ))}
           <Link href="/rezervacija" onClick={() => setOpen(false)}
             style={{ marginTop: 28, background: '#5C1A2E', color: 'white', fontSize: 14, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', height: 56, borderRadius: 2, textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10, opacity: open ? 1 : 0, transition: 'opacity 0.4s 0.36s' }}>
-            🍕 Rezerviši termin
+            Rezerviši termin
           </Link>
           <div style={{ marginTop: 32, opacity: open ? 1 : 0, transition: 'opacity 0.4s 0.42s' }}>
             <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.45)', marginBottom: 4 }}>📞 065 387 7777</p>
