@@ -7,7 +7,7 @@ VAŽNO O BRENDU: Napolitana Lab je radionica pice na prelepom imanju s bazenom. 
 
 PROGRAMI:
 - Kurs za pizza majstore: Jednodnevni intenziv napolitanske pice (razvlačenje, filovanje, pečenje). Cena 14.999,99 RSD po osobi. Idealno za pojedince koji žele da nauče zanat.
-- Proslave i rođendani: Naši majstori spremaju pice za goste, ili gosti sami prave uz vođenje. 5.999,99 RSD po osobi (jedna pica + neograničeno piće). Korišćenje bazena i prostora.
+- Proslave i rođendani: Naši majstori spremaju pice za goste, ili gosti sami prave uz vođenje. 5.999,99 RSD po osobi (neograničeno pica + neograničeno piće). Korišćenje bazena i prostora.
 - Team Building: Ceo dan za firme — bazen, sala, zabava i pizza radionica. Cena po dogovoru. Opcija prenoćišta u obližnjem hotelu. Faktura za firmu.
 
 LOKACIJA: Vrdnik, Fruška Gora (40 min od Novog Sada, 80 min od Beograda). Besplatni parking. Privatni bazen.
