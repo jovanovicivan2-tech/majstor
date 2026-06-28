@@ -41,7 +41,7 @@ export default function GalerijaSection() {
         </div>
 
         {/* Mozaik */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 auto-rows-[150px] md:auto-rows-[200px]">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5 auto-rows-[190px] md:auto-rows-[300px]">
           {PHOTOS.map((p, i) => (
             <button
               key={i}

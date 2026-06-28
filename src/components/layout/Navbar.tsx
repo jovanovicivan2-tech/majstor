@@ -63,6 +63,7 @@ export default function Navbar() {
               fontSize: 24,
               fontWeight: 600,
               letterSpacing: '0.01em',
+              whiteSpace: 'nowrap',
               color: open ? '#fff' : onLight ? '#5C1A2E' : '#fff',
             }}
           >

@@ -57,7 +57,7 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
       <div className="absolute inset-0 pointer-events-none" style={{ boxShadow: 'inset 0 0 200px rgba(0,0,0,0.4)' }} />
 
       {/* SADRŽAJ */}
-      <div className="relative z-10 h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-center" style={{ paddingTop: 96, paddingBottom: 104 }}>
+      <div className="relative z-10 h-full max-w-7xl mx-auto px-5 md:px-10 flex flex-col justify-start md:justify-center" style={{ paddingTop: 110, paddingBottom: 88 }}>
         <div className="max-w-2xl">
           <p className="eyebrow mb-6 enter-up" style={{ color: '#C9A84C', animationDelay: '0.05s' }}>
             Radionica napolitanske pice

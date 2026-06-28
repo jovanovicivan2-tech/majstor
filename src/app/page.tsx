@@ -2,6 +2,7 @@ import { createClient } from '@/lib/supabase/server';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
+import PricaSection from '@/components/home/PricaSection';
 import PackagesSection from '@/components/home/PackagesSection';
 import PizzaSection from '@/components/home/PizzaSection';
 import ProcesSection from '@/components/home/ProcesSection';
@@ -94,6 +95,7 @@ export default async function HomePage() {
           </div>
         </div>
       </Reveal>
+      <PricaSection />
       <Reveal delay={100}><PackagesSection packages={packages} /></Reveal>
       <Reveal delay={50}><PizzaSection /></Reveal>
       <Reveal delay={50}><ProcesSection /></Reveal>
