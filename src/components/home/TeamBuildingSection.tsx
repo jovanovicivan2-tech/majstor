@@ -1,4 +1,12 @@
 import Link from 'next/link';
+import ImageRotator from '@/components/ui/ImageRotator';
+
+// Rotacija pravih fotki venue-a (dok ne stignu prave team building fotke)
+const TB_SLIDES = [
+  { src: '/images/pizza-testo.jpg', alt: 'Tim zajedno pravi picu — razvlačenje testa' },
+  { src: '/images/pool_wide.jpg', alt: 'Privatni prostor sa bazenom za tim' },
+  { src: '/images/terrace_sunset.jpg', alt: 'Terasa u sumrak — druženje na Fruškoj Gori' },
+];
 
 // SVG putanje (24x24, stroke) — bez emoji
 const FEATURES: { d: string; text: string }[] = [
@@ -44,13 +52,7 @@ export default function TeamBuildingSection() {
 
         {/* SLIKA */}
         <div className="relative h-[280px] md:h-auto md:min-h-[620px] overflow-hidden order-1 md:order-2">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/images/pool_wide.jpg"
-            alt="Privatni prostor sa bazenom — idealno za team building na Fruškoj Gori"
-            className="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-          />
+          <ImageRotator images={TB_SLIDES} interval={5000} />
           <div className="absolute inset-0 md:hidden" style={{ background: 'linear-gradient(to top, rgba(28,28,30,0.5), transparent 60%)' }} />
           <div className="absolute inset-0 hidden md:block" style={{ background: 'linear-gradient(to right, rgba(28,28,30,0.6), transparent 40%)' }} />
         </div>
