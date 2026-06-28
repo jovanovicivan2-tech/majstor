@@ -3,9 +3,9 @@ import Link from 'next/link';
 const FEATURES = [
   { icon: '📍', text: '40 min od Novog Sada' },
   { icon: '🔒', text: 'Samo vaš tim — privatno' },
+  { icon: '🛏️', text: 'Opcija prenoćišta u hotelu' },
   { icon: '📄', text: 'Faktura za firmu' },
-  { icon: '👥', text: 'Do 50 učesnika' },
-  { icon: '🍕', text: 'Pizza team building aktivnost' },
+  { icon: '🍕', text: 'Pizza radionica za tim' },
   { icon: '🅿️', text: 'Besplatni parking' },
 ];
 
@@ -17,10 +17,10 @@ export default function TeamBuildingSection() {
           Za firme
         </p>
         <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontWeight: 500, fontSize: 'clamp(28px, 7vw, 40px)', color: 'white', lineHeight: 1.15, marginBottom: 16 }}>
-          Gde počinju<br />pravi timovi
+          Team building<br />uz pravu picu
         </h2>
         <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.62)', lineHeight: 1.65, marginBottom: 32 }}>
-          Zajednička iskustva grade timove brže od ijednog workshopa. Vaš tim pravi pizzu zajedno, jede je uz bazen na Fruškoj Gori — to su momenti koji ostaju.
+          Ceo dan za vašu firmu: bazen, sala i zabava, uz pizza radionicu koja spaja tim. Majstori iz picerije Majstor i Margarita vode radionicu, a vi se opustite. Za udaljenije timove — opcija prenoćišta u obližnjem hotelu.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 36 }}>
           {FEATURES.map(f => (
