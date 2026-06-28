@@ -3,9 +3,9 @@ import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 
 const SLIDES = [
-  { src: '/images/pool_dusk.jpg', alt: 'Privatni bazen u sumrak — Majstor i Margarita, Vrdnik, Fruška Gora' },
-  { src: '/images/pool_wide.jpg', alt: 'Pogled na bazen i modernu kuću — Majstor i Margarita' },
-  { src: '/images/pool_person.jpg', alt: 'Opuštanje u bazenu okruženom lavandom — Fruška Gora' },
+  { src: '/images/pool_dusk.jpg', alt: 'Bazen u sumrak na imanju u Vrdniku — Napolitana Lab, Fruška Gora' },
+  { src: '/images/pool_wide.jpg', alt: 'Pogled na bazen i prostor za radionice pice — Fruška Gora' },
+  { src: '/images/pool_person.jpg', alt: 'Opuštanje u bazenu okruženom lavandom — Vrdnik' },
   { src: '/images/terrace_sunset.jpg', alt: 'Terasa sa panoramskim pogledom na Vojvodinu u sumrak' },
 ];
 
@@ -37,13 +37,13 @@ export default function Hero() {
       <div style={{ position:'relative', zIndex:10, padding:'0 20px', maxWidth:'600px' }}>
         <p style={{ fontSize:'11px', fontWeight:500, letterSpacing:'0.18em', textTransform:'uppercase', color:'#C9A84C', marginBottom:'16px', display:'flex', alignItems:'center', gap:'12px' }}>
           <span style={{ display:'inline-block', width:'32px', height:'1px', background:'rgba(201,168,76,0.7)' }} />
-          Vrdnik · Fruška Gora
+          Napolitana Lab · Vrdnik
         </p>
-        <h1 style={{ fontFamily:'Cormorant Garamond, Georgia, serif', fontWeight:500, fontSize:'clamp(44px, 11vw, 84px)', lineHeight:1.02, color:'white', marginBottom:'20px' }}>
-          Privatni raj<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.82)' }}>na Fruškoj Gori</em>
+        <h1 style={{ fontFamily:'Cormorant Garamond, Georgia, serif', fontWeight:500, fontSize:'clamp(40px, 10vw, 78px)', lineHeight:1.04, color:'white', marginBottom:'20px' }}>
+          Naučite pravu<br /><em style={{ fontStyle:'italic', color:'rgba(255,255,255,0.85)' }}>napolitansku picu</em>
         </h1>
-        <p style={{ fontSize:'16px', fontWeight:300, color:'rgba(255,255,255,0.7)', lineHeight:1.65, marginBottom:'36px', maxWidth:'320px' }}>
-          Bazen, pizza radionice i nezaboravna atmosfera — sve rezervisano samo za vas.
+        <p style={{ fontSize:'16px', fontWeight:300, color:'rgba(255,255,255,0.72)', lineHeight:1.65, marginBottom:'36px', maxWidth:'340px' }}>
+          Radionice, proslave i team building uz bazen na Fruškoj Gori — sa majstorima iz picerije Majstor i Margarita.
         </p>
         <Link href="/rezervacija" style={{ display:'inline-flex', alignItems:'center', gap:'10px', background:'#5C1A2E', color:'white', fontSize:'13px', fontWeight:700, letterSpacing:'0.07em', textTransform:'uppercase', padding:'0 32px', height:'52px', borderRadius:'2px', textDecoration:'none' }}>
           Rezervišite termin →
