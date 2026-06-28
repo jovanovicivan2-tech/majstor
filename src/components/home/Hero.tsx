@@ -3,10 +3,10 @@ import { useEffect, useState, useCallback } from 'react';
 import Link from 'next/link';
 
 const SLIDES = [
-  { src: '/images/hero-pool.jpg', alt: 'Opuštanje u bazenu — Majstor i Margarita, Vrdnik' },
-  { src: '/images/hero-sunset-pool.jpg', alt: 'Privatni bazen u sumrak — Fruška Gora' },
-  { src: '/images/hero-girl.jpg', alt: 'Savršen letnji dan u bazenu' },
-  { src: '/images/hero-terrace.jpg', alt: 'Terasa sa panoramom — Vrdnik' },
+  { src: '/images/pool_dusk.jpg', alt: 'Privatni bazen u sumrak — Majstor i Margarita, Vrdnik, Fruška Gora' },
+  { src: '/images/pool_wide.jpg', alt: 'Pogled na bazen i modernu kuću — Majstor i Margarita' },
+  { src: '/images/pool_person.jpg', alt: 'Opuštanje u bazenu okruženom lavandom — Fruška Gora' },
+  { src: '/images/terrace_sunset.jpg', alt: 'Terasa sa panoramskim pogledom na Vojvodinu u sumrak' },
 ];
 
 export default function Hero() {
