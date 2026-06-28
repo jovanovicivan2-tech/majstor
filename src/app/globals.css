@@ -25,7 +25,7 @@
   --font-body:    var(--font-inter), system-ui, -apple-system, sans-serif;
 
   /* ---- Tipografska skala (display) — editorial, samouvereno ---- */
-  --text-hero:    clamp(3.25rem, 12vw, 7.5rem);
+  --text-hero:    clamp(2.6rem, 10vw, 7.5rem);
   --text-d-2xl:   clamp(2.5rem, 8vw, 5rem);
   --text-d-xl:    clamp(2rem, 6vw, 3.5rem);
   --text-d-lg:    clamp(1.6rem, 4.5vw, 2.5rem);
