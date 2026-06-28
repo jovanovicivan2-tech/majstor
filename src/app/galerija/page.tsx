@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import PageHero from '@/components/layout/PageHero';
 import GalerijaClient from '@/components/home/GalerijaClient';
 import { createClient } from '@/lib/supabase/server';
 import type { GalleryImage } from '@/types';
@@ -31,17 +32,13 @@ export default async function GalerijaPage() {
   return (
     <>
       <Navbar />
-      <div className="pt-16">
-        <div style={{ background: '#1C1C1E', height: '192px', display: 'flex', alignItems: 'flex-end', padding: '0 20px 32px', position: 'relative', overflow: 'hidden' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/pool_dusk.jpg" alt="" aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.35 }} />
-          <div style={{ position: 'relative', zIndex: 1 }}>
-            <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: '8px' }}>Galerija</p>
-            <h1 className="font-serif" style={{ color: 'white', fontSize: 'clamp(28px, 6vw, 48px)', fontWeight: 500 }}>Pogledajte prostor</h1>
-          </div>
-        </div>
-        <GalerijaClient images={images} />
-      </div>
+      <PageHero
+        eyebrow="Galerija"
+        title={<>Pogledajte prostor</>}
+        subtitle="Bazen, ambijent i atmosfera imanja na Fruškoj Gori — uživo je još lepše."
+        image="/images/pool_dusk.jpg"
+      />
+      <GalerijaClient images={images} />
       <Footer />
     </>
   );
