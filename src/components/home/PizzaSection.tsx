@@ -2,14 +2,13 @@ import Link from 'next/link';
 
 const STEPS = [
   { num: '1', title: 'Priprema testa', sub: '30 minuta · Tajne pravog mešenja' },
-  { num: '2', title: 'Odabir sastojaka', sub: '15 minuta · Svako bira svoju kombinaciju' },
+  { num: '2', title: 'Razvlačenje i filovanje', sub: 'Naučite tehniku pravih majstora' },
   { num: '3', title: 'Pečenje & degustacija', sub: 'Uz piće, pored bazena 🍕' },
 ];
 
 export default function PizzaSection() {
   return (
     <section style={{ background: '#1C1C1E' }}>
-      {/* Atmosferska fotografija */}
       <div style={{ position: 'relative', height: 260, overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -28,20 +27,20 @@ export default function PizzaSection() {
             lineHeight: 1.35,
             maxWidth: 460,
           }}>
-            "Napravite svoju pistu — i pojedite je pored bazena, naravno."
+            "Napravite svoju picu — i pojedite je pored bazena, naravno."
           </p>
         </div>
       </div>
 
       <div style={{ padding: '48px 20px 64px', maxWidth: 520 }}>
         <p style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.2em', textTransform: 'uppercase', color: '#C9A84C', marginBottom: 12 }}>
-          Pizza radionica
+          Radionica pice
         </p>
         <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontWeight: 500, fontSize: 'clamp(28px, 7vw, 40px)', color: 'white', lineHeight: 1.15, marginBottom: 16 }}>
           Postanite pizza<br />majstor za jedan dan
         </h2>
         <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, marginBottom: 32 }}>
-          Naši pizza majstori čuvari su tradicije napolitanske pizze. Naučićete da mesete testo pravom tehnikom — a onda ćete je pojesti pored bazena.
+          Radionicu vode pizza majstori iz picerije Majstor i Margarita — čuvari tradicije napolitanske pice. Naučićete da mesite i razvlačite testo pravom tehnikom, a onda ćete picu pojesti pored bazena.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 36 }}>
           {STEPS.map(s => (
