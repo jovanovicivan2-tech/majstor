@@ -3,13 +3,13 @@ const KORACI = [
   { n: '02', t: 'Maturacija', d: 'Strpljenje pravi razliku. Testo sazreva satima, dok ne postane lagano, vazdušasto i lako svarljivo.' },
   { n: '03', t: 'Razvlačenje rukom', d: 'Bez oklagije. Testo se razvlači vrhovima prstiju — tanak centar i vazdušast, mekan obod.' },
   { n: '04', t: 'Filovanje', d: 'San Marzano pelat, mocarela, sveži bosiljak i kap maslinovog ulja. Birani sastojci — ništa suvišno.' },
-  { n: '05', t: 'Pečenje na vatri', d: 'Krušna peć na drva, preko 400°C. Pica je gotova za 90 sekundi — rumena kora i savršen, pegav obod.' },
+  { n: '05', t: 'Pečenje na vatri', d: 'Profesionalna peć za napolitanu, preko 450°C. Pica je gotova za 90 sekundi — rumena kora i savršen, pegav obod.' },
   { n: '06', t: 'Posluživanje', d: 'Sto je već postavljen: tanjiri, escajg, čaše i pažljivo izabrana pića. Vi samo sednite i uživate — uz bazen.' },
 ];
 
 const UKLJUCENO = [
   { d: 'M2 12c2.5-3 6-5 10-5s7.5 2 10 5M12 7v0M7 9.5l1 2.5M17 9.5l-1 2.5M10 11l.5 2M14 11l-.5 2', t: 'Birani sastojci i testo' },
-  { d: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', t: 'Krušna peć na drva' },
+  { d: 'M12 3c1.5 2.5 3 4 3 6.5a3 3 0 0 1-6 0c0-1 .4-1.8 1-2.5M12 21a6 6 0 0 0 6-6c0-3-2-5.5-6-9-4 3.5-6 6-6 9a6 6 0 0 0 6 6Z', t: 'Profesionalna peć za napolitanu' },
   { d: 'M5 3v8a2 2 0 0 0 4 0V3M7 11v10M19 3c-1.5 0-3 1.5-3 4s1.5 4 3 4v10', t: 'Tanjiri, escajg i čaše' },
   { d: 'M3 11a9 9 0 0 1 18 0v1H3v-1ZM2 12h20M5 16h14M7 20h10', t: 'Stolno posuđe i stolnjaci' },
   { d: 'M8 2h8l-1 7a3 3 0 0 1-6 0L8 2ZM12 12v8M8 22h8', t: 'Pića uz picu (voda, sok, pivo, vino)' },

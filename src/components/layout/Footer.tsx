@@ -10,7 +10,7 @@ const NAV: [string, string][] = [
 ];
 
 const PHONE = '065 387 7777';
-const EMAIL = 'jovanovicivan2@gmail.com';
+const EMAIL = 'kontakt@napolitanalab.rs';
 
 function Icon({ d, fill = false }: { d: string; fill?: boolean }) {
   return (

@@ -73,7 +73,7 @@ export default function Hero({ slides }: { slides?: HeroSlide[] }) {
           </h1>
 
           <p style={{ fontSize: 17, fontWeight: 300, color: 'rgba(255,255,255,0.78)', lineHeight: 1.65, marginBottom: 40, maxWidth: 460 }}>
-            Radionice, proslave i team building — uz vatru krušne peći i mir bazena na Fruškoj Gori.
+            Radionice, proslave i team building — uz živu vatru i mir bazena na Fruškoj Gori.
             Vode ih majstori picerije <span style={{ color: '#fff', fontWeight: 400 }}>Majstor i Margarita</span>.
           </p>
 

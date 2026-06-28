@@ -29,7 +29,7 @@ const GALLERY_FALLBACK: HeroSlide[] = [
 ];
 
 const FALLBACK: Package[] = [
-  { id: '1', slug: 'pizza-kurs', name_sr: 'Kurs za pizza majstore', name_en: null, description_sr: 'Jednodnevni intenziv napolitanske pice. Majstori picerije Majstor i Margarita otkrivaju veštinu razvlačenja, filovanja i pečenja na vatri krušne peći.', description_en: null, includes: ['Ceo dan obuke uz majstora', 'Razvlačenje, filovanje, pečenje', 'Svi sastojci i oprema', 'Vaša pica uz piće, pored bazena'], base_price_rsd: 14999, price_per_person_rsd: 14999, min_guests: 1, max_guests: 30, duration_hours: 8, deposit_percentage: 30, is_active: true, sort_order: 1, created_at: '' },
+  { id: '1', slug: 'pizza-kurs', name_sr: 'Kurs za pizza majstore', name_en: null, description_sr: 'Jednodnevni intenziv napolitanske pice. Majstori picerije Majstor i Margarita otkrivaju veštinu razvlačenja, filovanja i pečenja u profesionalnoj peći za napolitanu.', description_en: null, includes: ['Ceo dan obuke uz majstora', 'Razvlačenje, filovanje, pečenje', 'Svi sastojci i oprema', 'Vaša pica uz piće, pored bazena'], base_price_rsd: 14999, price_per_person_rsd: 14999, min_guests: 1, max_guests: 30, duration_hours: 8, deposit_percentage: 30, is_active: true, sort_order: 1, created_at: '' },
   { id: '2', slug: 'proslave', name_sr: 'Proslave i rođendani', name_en: null, description_sr: 'Naši majstori pripremaju picu za vaše goste — ili gosti sami stvaraju svoju, uz vođenje. Po osobi: neograničeno pice i pića.', description_en: null, includes: ['Neograničeno pice za svakog gosta', 'Neograničeno piće', 'Korišćenje bazena i prostora', 'Mogućnost: gosti sami prave picu'], base_price_rsd: 5999, price_per_person_rsd: 5999, min_guests: 5, max_guests: 50, duration_hours: 6, deposit_percentage: 30, is_active: true, sort_order: 2, created_at: '' },
   { id: '3', slug: 'team-building', name_sr: 'Team Building', name_en: null, description_sr: 'Ceo dan posvećen vašem timu: bazen, prostor i radionica pice koja zbližava. Uz mogućnost prenoćišta u obližnjem hotelu.', description_en: null, includes: ['Privatni prostor ceo dan', 'Radionica pice za tim', 'Bazen i prostor za druženje', 'Mogućnost prenoćišta u hotelu', 'Faktura za firmu'], base_price_rsd: 0, price_per_person_rsd: null, min_guests: 10, max_guests: 50, duration_hours: 10, deposit_percentage: 30, is_active: true, sort_order: 3, created_at: '' },
 ];
@@ -69,7 +69,7 @@ export default async function HomePage() {
           <p className="font-display leading-snug max-w-3xl mx-auto text-center" style={{ fontSize: 'var(--text-d-lg)', color: '#1C1C1E', fontWeight: 400 }}>
             Napolitana Lab nije tek radionica. To je mesto gde se{' '}
             <em style={{ fontStyle: 'italic', color: '#5C1A2E' }}>umeće napolitanske pice</em> prenosi iz ruke u ruku —
-            uz vatru krušne peći i mir bazena.
+            uz živu vatru i mir bazena.
           </p>
           <p className="max-w-xl mx-auto text-center mt-6" style={{ fontSize: 16, color: '#8A7E72', lineHeight: 1.65 }}>
             Radionice vode majstori picerije{' '}

@@ -10,7 +10,7 @@ const NAV = [
 ];
 
 const PHONE = '065 387 7777';
-const EMAIL = 'jovanovicivan2@gmail.com';
+const EMAIL = 'kontakt@napolitanalab.rs';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);

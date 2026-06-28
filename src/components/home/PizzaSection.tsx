@@ -3,7 +3,7 @@ import ImageRotator from '@/components/ui/ImageRotator';
 
 const PIZZA_SLIDES = [
   { src: '/images/pizza-testo.jpg', alt: 'Razvlačenje testa rukom — napolitanska tehnika' },
-  { src: '/images/pizza-margherita.jpg', alt: 'Napolitanska margherita iz krušne peći' },
+  { src: '/images/pizza-margherita.jpg', alt: 'Napolitanska margherita iz profesionalne peći' },
 ];
 
 const STEPS = [
@@ -35,7 +35,7 @@ export default function PizzaSection() {
           </h2>
           <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.65)', lineHeight: 1.65, marginBottom: 36 }}>
             Radionicu vode majstori picerije <span style={{ color: '#fff' }}>Majstor i Margarita</span> — čuvari
-            napolitanske tradicije. Testo se mesi i razvlači rukom, peče na vatri krušne peći, a potom poslužuje uz sam bazen.
+            napolitanske tradicije. Testo se mesi i razvlači rukom, peče u profesionalnoj peći za napolitanu, a potom poslužuje uz sam bazen.
           </p>
 
           <div className="flex flex-col" style={{ gap: 0 }}>
