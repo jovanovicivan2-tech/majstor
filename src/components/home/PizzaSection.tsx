@@ -14,8 +14,8 @@ export default function PizzaSection() {
         <div className="relative h-[280px] md:h-auto md:min-h-[640px] overflow-hidden">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/interior_lavender.jpg"
-            alt="Enterijer sa pogledom na bazen — radionica pice na Fruškoj Gori"
+            src="/images/pizza-testo.jpg"
+            alt="Razvlačenje testa rukom — napolitanska tehnika, Majstor i Margarita"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ objectPosition: 'center' }}
             loading="lazy"
